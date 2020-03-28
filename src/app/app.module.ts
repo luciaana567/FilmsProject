@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SearchListComponent } from './movie/search-list/search-list.component';
 import { GenresListComponent } from './movie/genres-list/genres-list.component';
 import { ViewMovieComponent } from './movie/view-movie/view-movie.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ViewMovieComponent } from './movie/view-movie/view-movie.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
