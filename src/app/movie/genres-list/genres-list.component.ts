@@ -19,6 +19,7 @@ export class GenresListComponent implements OnInit {
   public paginaProx;
   public totalPagina = this.pagina.total_pages;
   
+  //váriaveis para pegar informações do gênero
   public genero;
   public generoNome;
 
@@ -29,7 +30,7 @@ export class GenresListComponent implements OnInit {
     this.genero=this.activatedRoute.snapshot.params['genero'];    
    }
 
-
+  //função para atualizar dados da  página
   atualizar():any{
       let g = this.activatedRoute.snapshot.params['genero'];
       if(this.genero!= g && g!= null){
@@ -40,8 +41,6 @@ export class GenresListComponent implements OnInit {
       } 
       return g;
   }
-
-
 
   //pegar os dados da api para lista filmes por mais recentes e por genero
   getterListFilms(genres:any, page: Number) {
@@ -57,17 +56,16 @@ export class GenresListComponent implements OnInit {
 
   }  
  
-
   //paginacao 
   setPagina(pag : any) {
     this.paginaAtual = pag;
     this.paginaAnt = pag-1;
     this.paginaProx = pag+1;
 
-      this.getterListFilms(this.genero,this.paginaAtual);
+    this.getterListFilms(this.genero,this.paginaAtual);
   }    
   
- 
+ //chamar a rota para vizualizar detalhes do filmes
   visualizarFilmes(id: Number) {
     this.router.navigateByUrl('/detalhes/'+id);
   }

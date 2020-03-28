@@ -1,1 +1,37 @@
-<p>search-list works!</p>
+<div *ngIf="nomeFilme!=atualizar()"></div>
+<div *ngIf="nomeFilme===atualizar()"></div>
+
+
+<h3> Buscando por {{nomeFilme}}</h3>
+
+<div >
+    <ul *ngFor ="let i of pagina.results" >
+        <mat-card (click)='visualizarFilmes(i.id)'>
+            {{i.title}}
+        </mat-card>
+    </ul>
+</div>
+
+
+<div *ngIf ="paginaAtual===1">
+      <button >1</button> <button (click)="setPagina(paginaProx)">{{paginaProx}}</button>...<button (click)="setPagina(pagina.total_pages)">{{pagina.total_pages}}</button>
+    
+</div>   
+
+<div *ngIf ="paginaAtual===2">
+    <button (click)="setPagina(1)">1</button> |<button (click)="setPagina(paginaAtual)">{{paginaAtual}}</button>|<button (click)="setPagina(paginaProx)">{{paginaProx}}</button>|...<button (click)="setPagina(pagina.total_pages)">{{pagina.total_pages}}</button>
+
+</div>   
+
+<div *ngIf ="paginaAtual>2 && paginaProx<pagina.total_pages " >
+    <button (click)="setPagina(1)">1</button> ...|<button (click)="setPagina(paginaAnt)">{{paginaAnt}}</button>|<button (click)="setPagina(paginaAtual)">{{paginaAtual}}</button>|<button (click)="setPagina(paginaProx)">{{paginaProx}}</button>|...<button (click)="setPagina(pagina.total_pages)">{{pagina.total_pages}}</button>
+</div>   
+
+<div *ngIf ="paginaAtual>2 && paginaProx==pagina.total_pages " >
+    <button (click)="setPagina(1)">1</button> ...|<button (click)="setPagina(paginaAnt)">{{paginaAnt}}</button>|<button (click)="setPagina(paginaAtual)">{{paginaAtual}}</button>|<button (click)="setPagina(pagina.total_pages)">{{pagina.total_pages}}</button>
+</div>   
+
+<div *ngIf ="paginaAtual==pagina.total_pages">
+    <button (click)="setPagina(1)">1</button> ...|<button (click)="setPagina(paginaAnt)">{{paginaAnt}}</button>|<button (click)="setPagina(pagina.total_pages)">{{pagina.total_pages}}</button>
+</div>   
+
