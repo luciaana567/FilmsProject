@@ -1,0 +1,12 @@
+<div>
+    <form class="example-form" autocomplete="off" novalidate  [formGroup]="formulario" (ngSubmit)='onSubmit()'>
+       
+          <h3>Pesquise seu filme</h3>
+          <input matInput name='texto' id='texto' placeholder="Digite o nome seu filme aqui"  type="text"  formControlName="texto">
+           
+          <input type="submit" value="Salvar">
+        
+      </form>
+    </div>
+    
+    <br>
