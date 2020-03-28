@@ -13,6 +13,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './body/search/search.component';
+import { SelectGenersComponent } from './body/select-geners/select-geners.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SearchComponent } from './body/search/search.component';
     SearchListComponent,
     GenresListComponent,
     ViewMovieComponent,
-    SearchComponent
+    SearchComponent,
+    SelectGenersComponent
   ],
   imports: [
     BrowserModule,

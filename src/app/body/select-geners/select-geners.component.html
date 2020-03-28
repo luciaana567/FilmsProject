@@ -1,0 +1,12 @@
+
+<!--Select de Gêneros dos Filmes-->  
+<mat-form-field>
+    <mat-label>Gêneros</mat-label>
+    <mat-select>
+        <mat-option value="Todos" (click)="setGenero('Todos','Todos')">Todos</mat-option>
+        <mat-option value="Populares" (click)="setGenero('Populares','Populares')">Populares</mat-option>
+        <mat-option *ngFor="let i of listGeneros.genres" [value]="i.name"  (click)="setGenero(i.id,i.name)">
+            {{i.name}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
