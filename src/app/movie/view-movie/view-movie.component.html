@@ -1,1 +1,13 @@
-<p>view-movie works!</p>
+<div>
+    <h1>{{nome}}</h1>
+    <h3>Descrição:</h3> 
+    <p>{{descricao}}</p>
+    <h5> Data de Lançamento : {{dataDeLancamento}}</h5> 
+    <p>Tempo de execução : {{duracao}}</p>
+    <p>Avaliação média: {{avaliacao}}</p>
+    <ul *ngFor='let i of generos'>
+        <p>{{i.name}}</p>
+    </ul>
+    <br>
+    <img mat-card-image [src]="foto" >
+</div>
