@@ -4,7 +4,7 @@
 <div class="body-list" *ngIf="pagina.total_results!=0">
     
     <div class="list-Film"  >
-    <h1>Home> Buscando por {{nomeFilme}}</h1>
+     <h1><a >Home</a>>Buscando por {{nomeFilme}}</h1>
 
         <ul *ngFor ="let i of pagina.results" >
             <mat-card (click)='visualizarFilmes(i.id)'>  
@@ -34,20 +34,19 @@
       
     <div class="paginacao">
      
-        <div  class='paginacao-one' *ngIf ="paginaAtual===1">
-            
+        <div *ngIf ="paginaAtual===1">
             <button  (click)="setPagina(1)">1</button> 
             <button (click)="setPagina(paginaProx)">{{paginaProx}}</button>
             <button (click)="setPagina(pagina.total_pages)">{{pagina.total_pages}}</button>       
         </div> 
-        <div class='paginacao-two' *ngIf ="paginaAtual===2">
-                <a  (click)="setPagina(1)">INÍCIO</a> 
+        <div  *ngIf ="paginaAtual===2">
+                <a hre (click)="setPagina(1)">INÍCIO</a> 
                 <button class="button2" (click)="setPagina(paginaAtual)">{{paginaAtual}}</button>
                 <button class="button3" (click)="setPagina(paginaProx)">{{paginaProx}}</button>
                 <a (click)="setPagina(pagina.total_pages)">FIM</a>
         </div >   
     
-        <div class='paginacao-three' *ngIf ="paginaAtual>2 && paginaProx<pagina.total_pages " >
+        <div  *ngIf ="paginaAtual>2 && paginaProx<pagina.total_pages " >
             <a  (click)="setPagina(1)">INÍCIO</a>
             <button (click)="setPagina(paginaAnt)">{{paginaAnt}}</button>
             <button (click)="setPagina(paginaAtual)">{{paginaAtual}}</button>
@@ -55,15 +54,15 @@
             <a (click)="setPagina(pagina.total_pages)">FIM</a>
         </div>   
     
-        <div class='paginacao-four' *ngIf ="paginaAtual>2 && paginaProx==pagina.total_pages " >
-                <button (click)="setPagina(1)">1</button>
+        <div  *ngIf ="paginaAtual>2 && paginaProx==pagina.total_pages " >
+                <a  (click)="setPagina(1)">INÍCIO</a>
                 <button (click)="setPagina(paginaAnt)">{{paginaAnt}}</button>
                 <button (click)="setPagina(paginaAtual)">{{paginaAtual}}</button>
                 <button (click)="setPagina(pagina.total_pages)">{{pagina.total_pages}}</button>
         </div>   
     
-        <div class='paginacao-five' *ngIf ="paginaAtual==pagina.total_pages">
-                <button (click)="setPagina(1)">1</button>
+        <div  *ngIf ="paginaAtual==pagina.total_pages">
+                <a  (click)="setPagina(1)">INÍCIO</a>
                 <button (click)="setPagina(paginaAnt)">{{paginaAnt}}</button>
                 <button (click)="setPagina(pagina.total_pages)">{{pagina.total_pages}}</button>
         </div>   
@@ -71,6 +70,6 @@
 </div>
 
 <div class="noResults" *ngIf="pagina.total_results===0">
-    <h1>Home> Buscando por {{nomeFilme}}</h1>
+    <h1><a >Home</a>>Buscando por {{nomeFilme}}</h1>
     <h1>Não foram encontrados resultados para sua pesquisa.</h1>
 </div>

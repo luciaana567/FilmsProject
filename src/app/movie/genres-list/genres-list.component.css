@@ -1,11 +1,13 @@
+/* body*/
 .body-list{
     margin-top: 40px;
     margin-bottom: 40px;
     margin-left: 100px;
     margin-right: 0px;
+    width: auto;
 }
 
-
+/* lista de filme*/
 .list-Film{
     margin-bottom: 20px;
 }
@@ -16,12 +18,20 @@
     margin-bottom: 50px;
     margin-left: 40px;
 }
+.list-Film h1 a{
+    cursor: pointer;
+    transition: 1s;
+}
+.list-Film h1 a:hover{
+    color: rgb(221, 0, 63);
+}
 
 .list-Film ul{
     list-style: none;
     float: left;
 }
 
+/* Cada card de filme*/
 .list-Film ul mat-card {
     margin-bottom: 50px;
     margin-right: 50px;
@@ -32,21 +42,26 @@
     border-top-right-radius: 10px;
     cursor: pointer;
 }
+/* Cada card de filme quando passar o mouse*/
 .list-Film ul mat-card:hover {
     box-shadow:  2px 5px 10px 5px rgba(50, 50, 50, 0.5);
 }
 
 .list-Fim ul mat-card p{
-    text-align: justify;
+    text-align: center;
     font-family: 'Dosis', sans-serif;
     color: rgba(0, 0, 0,0.5);
 }
+
+/* Imagem de cada card */
 .imageTrue img{
     width: 204px;
     height: 279px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
+
+/* Cada card de filme que não possui cartaz*/
 .imageFalse img { 
     width: 204px;
     height: 279px;
@@ -54,26 +69,17 @@
     border-top-right-radius: 10px;
 }
 
+/* Título do filme*/
 .titulo {
     width: 150px;
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
-
-    direction: ltr;
-    text-transform: uppercase;
+   text-overflow: ellipsis;
 }
 
 
-.titulo :hover {
-    width: 170px;
-    margin-bottom: 10px;
-    white-space: nowrap !important;
-}
-
-
-
+/* paginacao body*/
 .paginacao {
     margin-left: 30px;
     margin-top: 0%;
@@ -82,54 +88,7 @@
     float: right;
 }
 
-/*
-.paginacao-two {
-    margin-left: 30px;
-    margin-top: 50px;
-    margin-bottom: 100px;
-    margin-right: 50px;
-    float:left;
-    padding: 15px 490px ;
-    border-bottom: 1.5px solid;
-    border-top: 1.5px solid;
-    border-color:  rgba(0, 0, 0,0.5);
-}
-.paginacao-three {
-    margin-left: 0px;
-    margin-top: 50px;
-    margin-bottom: 100px;
-    margin-right: 40px;
-    float:left;
-    padding: 15px 490px ;
-    border-bottom: 1.5px solid;
-    border-top: 1.5px solid;
-    border-color:  rgba(0, 0, 0,0.5);
-}
-
-.paginacao-four{
-    margin-left: 0px;
-    margin-top: 50px;
-    margin-bottom: 100px;
-    margin-right: 40px;
-    float:left;
-    padding: 15px 490px ;
-    border-bottom: 1.5px solid;
-    border-top: 1.5px solid;
-    border-color:  rgba(0, 0, 0,0.5);
-}
-
-.paginacao-five{
-    margin-left: 30px;
-    margin-top: 50px;
-    margin-bottom: 150px;
-    margin-right: 50px;
-    float:left;
-    padding: 15px 490px ;
-    border-bottom: 1.5px solid;
-    border-top: 1.5px solid;
-    border-color:  rgba(0, 0, 0,0.5);
-}
-*/
+/* paginacao links*/
 .paginacao a {
     font-size: 18px;
     font-family: 'Dosis', sans-serif;
@@ -139,10 +98,9 @@
     cursor: pointer;
 }
 
-.paginacao a :hover {
-    color:rgb(221, 0, 63);
-}
 
+
+/* paginacao button*/
 .paginacao button {
     padding: 15px 15px;
     margin-top:3px;
@@ -160,9 +118,22 @@
     cursor: pointer;
 }
 
+/* hover's dos buttons e links*/
 .paginacao button:hover {
     background-color: rgb(255, 0, 100);
 }
 
+.paginacao a:hover {
+    color: rgb(255, 0, 100);
+}
 
-
+@media only screen and (max-device-width: 490px) {
+    .body-list{
+        margin-top: 40px;
+        margin-bottom: 40px;
+        margin-left: 50px;
+        margin-right: 0px;
+        width: auto;
+    }
+    
+}
