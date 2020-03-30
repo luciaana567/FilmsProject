@@ -127,6 +127,7 @@
     color: rgb(255, 0, 100);
 }
 
+/*responsivo*/
 @media only screen and (max-device-width: 490px) {
     .body-list{
         margin-top: 40px;
