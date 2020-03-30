@@ -56,14 +56,14 @@
         </div>   
     
         <div class='paginacao-four' *ngIf ="paginaAtual>2 && paginaProx==pagina.total_pages " >
-                <button (click)="setPagina(1)">1</button>
+                <a  (click)="setPagina(1)">INÍCIO</a>
                 <button (click)="setPagina(paginaAnt)">{{paginaAnt}}</button>
                 <button (click)="setPagina(paginaAtual)">{{paginaAtual}}</button>
                 <button (click)="setPagina(pagina.total_pages)">{{pagina.total_pages}}</button>
         </div>   
     
         <div class='paginacao-five' *ngIf ="paginaAtual==pagina.total_pages">
-                <button (click)="setPagina(1)">1</button>
+                <a  (click)="setPagina(1)">INÍCIO</a>
                 <button (click)="setPagina(paginaAnt)">{{paginaAnt}}</button>
                 <button (click)="setPagina(pagina.total_pages)">{{pagina.total_pages}}</button>
         </div>   

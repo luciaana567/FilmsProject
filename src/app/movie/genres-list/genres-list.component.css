@@ -73,18 +73,16 @@
 }
 
 
-.paginacao-one {
+
+.paginacao {
     margin-left: 30px;
-    margin-top: 50px;
-    margin-bottom: 150px;
-    margin-right: 50px;
-    float:left;
-    padding: 15px 490px ;
-    border-bottom: 1.5px solid;
-    border-top: 1.5px solid;
-    border-color:  rgba(0, 0, 0,0.5);
+    margin-top: 0%;
+    margin-bottom: 50px;
+    margin-right: 120px;
+    float: right;
 }
 
+/*
 .paginacao-two {
     margin-left: 30px;
     margin-top: 50px;
@@ -131,7 +129,7 @@
     border-top: 1.5px solid;
     border-color:  rgba(0, 0, 0,0.5);
 }
-
+*/
 .paginacao a {
     font-size: 18px;
     font-family: 'Dosis', sans-serif;
@@ -147,7 +145,8 @@
 
 .paginacao button {
     padding: 15px 15px;
-    margin-bottom: 3px;
+    margin-top:3px;
+    margin-bottom: 20px;
     margin-right: 3px;
     margin-left: 3px;
     background-color: rgb(221, 0, 63);
