@@ -1,5 +1,5 @@
   <div *ngIf="genero !=atualizar()"></div>
-<div *ngIf="genero ===atualizar()"></div>
+  <div *ngIf="genero ===atualizar()" ></div>
 
 <div class="body-list">
     
@@ -31,26 +31,43 @@
            </mat-card>
         </ul>
     </div>
-
+      
     <div class="paginacao">
-        <div *ngIf ="paginaAtual===1">
-                <button >1</button> <button (click)="setPagina(paginaProx)">{{paginaProx}}</button>...<button (click)="setPagina(pagina.total_pages)">{{pagina.total_pages}}</button>       
+     
+        <div  class='paginacao-one' *ngIf ="paginaAtual===1">
+            
+            <button  (click)="setPagina(1)">1</button> 
+            <button (click)="setPagina(paginaProx)">{{paginaProx}}</button>
+            <button (click)="setPagina(pagina.total_pages)">{{pagina.total_pages}}</button>       
+        </div> 
+        <div class='paginacao-two' *ngIf ="paginaAtual===2">
+                <a  (click)="setPagina(1)">INÍCIO</a> 
+                <button class="button2" (click)="setPagina(paginaAtual)">{{paginaAtual}}</button>
+                <button class="button3" (click)="setPagina(paginaProx)">{{paginaProx}}</button>
+                <a (click)="setPagina(pagina.total_pages)">FIM</a>
+        </div >   
+    
+        <div class='paginacao-three' *ngIf ="paginaAtual>2 && paginaProx<pagina.total_pages " >
+            <a  (click)="setPagina(1)">INÍCIO</a>
+            <button (click)="setPagina(paginaAnt)">{{paginaAnt}}</button>
+            <button (click)="setPagina(paginaAtual)">{{paginaAtual}}</button>
+            <button (click)="setPagina(paginaProx)">{{paginaProx}}</button>
+            <a (click)="setPagina(pagina.total_pages)">FIM</a>
         </div>   
-
-        <div *ngIf ="paginaAtual===2">
-                <button (click)="setPagina(1)">1</button> |<button (click)="setPagina(paginaAtual)">{{paginaAtual}}</button>|<button (click)="setPagina(paginaProx)">{{paginaProx}}</button>|...<button (click)="setPagina(pagina.total_pages)">{{pagina.total_pages}}</button>
+    
+        <div class='paginacao-four' *ngIf ="paginaAtual>2 && paginaProx==pagina.total_pages " >
+                <button (click)="setPagina(1)">1</button>
+                <button (click)="setPagina(paginaAnt)">{{paginaAnt}}</button>
+                <button (click)="setPagina(paginaAtual)">{{paginaAtual}}</button>
+                <button (click)="setPagina(pagina.total_pages)">{{pagina.total_pages}}</button>
         </div>   
-
-        <div *ngIf ="paginaAtual>2 && paginaProx<pagina.total_pages " >
-                <button (click)="setPagina(1)">1</button> ...|<button (click)="setPagina(paginaAnt)">{{paginaAnt}}</button>|<button (click)="setPagina(paginaAtual)">{{paginaAtual}}</button>|<button (click)="setPagina(paginaProx)">{{paginaProx}}</button>|...<button (click)="setPagina(pagina.total_pages)">{{pagina.total_pages}}</button>
-        </div>   
-
-        <div *ngIf ="paginaAtual>2 && paginaProx==pagina.total_pages " >
-                <button (click)="setPagina(1)">1</button> ...|<button (click)="setPagina(paginaAnt)">{{paginaAnt}}</button>|<button (click)="setPagina(paginaAtual)">{{paginaAtual}}</button>|<button (click)="setPagina(pagina.total_pages)">{{pagina.total_pages}}</button>
-        </div>   
-
-        <div *ngIf ="paginaAtual==pagina.total_pages">
-                <button (click)="setPagina(1)">1</button> ...|<button (click)="setPagina(paginaAnt)">{{paginaAnt}}</button>|<button (click)="setPagina(pagina.total_pages)">{{pagina.total_pages}}</button>
+    
+        <div class='paginacao-five' *ngIf ="paginaAtual==pagina.total_pages">
+                <button (click)="setPagina(1)">1</button>
+                <button (click)="setPagina(paginaAnt)">{{paginaAnt}}</button>
+                <button (click)="setPagina(pagina.total_pages)">{{pagina.total_pages}}</button>
         </div>   
     </div>
+   
 </div>
+alou

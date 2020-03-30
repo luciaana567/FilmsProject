@@ -28,8 +28,11 @@ export class GenresListComponent implements OnInit {
   constructor( private service: Service, private activatedRoute: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void { 
-    this.setPagina(1);
+    
     this.genero=this.activatedRoute.snapshot.params['genero'];    
+    this.paginaAtual = this.activatedRoute.snapshot.params['pagina'];
+    this.paginaAtual = Number(this.paginaAtual);
+    this.setPagina(this.paginaAtual);
    }
 
   //função para atualizar dados da  página
@@ -38,7 +41,7 @@ export class GenresListComponent implements OnInit {
       if(this.genero!= g && g!= null){
         this.genero=g;
         this.generoNome= this.service.getGeneroNome();
-        this.getterListFilms(this.genero,1);
+        this.getterListFilms(this.genero,this.paginaAtual);
       
       } 
       return g;
@@ -65,7 +68,9 @@ export class GenresListComponent implements OnInit {
     this.paginaAnt = pag-1;
     this.paginaProx = pag+1;
 
+    
     this.getterListFilms(this.genero,this.paginaAtual);
+    this.router.navigateByUrl('/filmes/' +this.genero+'/'+this.paginaAtual);
   }    
   
  //chamar a rota para vizualizar detalhes do filmes
