@@ -1,0 +1,70 @@
+.body-list{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 100px;
+    margin-right: 0px;
+}
+
+
+.list-Film{
+    margin-bottom: 20px;
+}
+.list-Film h1{
+    text-align: left;
+    font-size: 35px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 50px;
+    margin-left: 40px;
+}
+
+.list-Film ul{
+    list-style: none;
+    float: left;
+}
+
+.list-Film ul mat-card {
+    margin-bottom: 50px;
+    margin-right: 50px;
+    display: table;
+    width: 304;
+    height: 310px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+}
+.list-Film ul mat-card:hover {
+    box-shadow:  2px 5px 10px 5px rgba(50, 50, 50, 0.5);
+}
+
+.imageTrue img{
+    width: 204px;
+    height: 279px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.imageFalse img { 
+    width: 204px;
+    height: 279px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.titulo {
+    width: 150px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    direction: ltr;
+}
+
+
+
+.paginacao{
+    margin-top: 2400px;
+}
+
+
+
+
+

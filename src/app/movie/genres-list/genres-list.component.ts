@@ -21,7 +21,9 @@ export class GenresListComponent implements OnInit {
   
   //váriaveis para pegar informações do gênero
   public genero;
-  public generoNome;
+  public generoNome='Todos';
+  public baseUrlFoto ='https://image.tmdb.org/t/p/w300';
+  public NoPicture ='https://www.southernpipe.com/ASSETS/WEB_THEMES/SOUTHERNPIPES/images/NoImage.png';
 
   constructor( private service: Service, private activatedRoute: ActivatedRoute, private router: Router) {}
 
@@ -56,6 +58,7 @@ export class GenresListComponent implements OnInit {
 
   }  
  
+
   //paginacao 
   setPagina(pag : any) {
     this.paginaAtual = pag;
