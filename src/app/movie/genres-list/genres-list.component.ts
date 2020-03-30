@@ -70,6 +70,7 @@ export class GenresListComponent implements OnInit {
 
     
     this.getterListFilms(this.genero,this.paginaAtual);
+    
     this.router.navigateByUrl('/filmes/' +this.genero+'/'+this.paginaAtual);
   }    
   

@@ -24,7 +24,7 @@ const routes: Routes = [
     path: 'buscar',
     children: [
       {
-        path: ':buscar',
+        path: ':buscar/:pagina',
         component: SearchListComponent
       },
       
