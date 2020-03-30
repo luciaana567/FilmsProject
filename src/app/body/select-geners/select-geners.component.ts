@@ -33,7 +33,6 @@ export class SelectGenersComponent implements OnInit {
     this.service.getListGeners().subscribe(
       (data: ListaGenero) =>{
         this.listGeneros = data;
-        console.log(this.listGeneros);
       },
       (error: any) =>{
         this.error=error;
@@ -46,7 +45,7 @@ export class SelectGenersComponent implements OnInit {
     setGenero(id: any, name:string){
       this.generoId = id;
       this.service.setGenero(id,name);
-      this.router.navigateByUrl('/filmes/' +id);
+      this.router.navigateByUrl('/filmes/' +id+'/'+1);
     }
 }
 
