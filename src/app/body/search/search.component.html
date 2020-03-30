@@ -1,12 +1,13 @@
-<div>
-    <form class="example-form" autocomplete="off" novalidate  [formGroup]="formulario" (ngSubmit)='onSubmit()'>
-       
-          <h3>Pesquise seu filme</h3>
-          <input matInput name='texto' id='texto' placeholder="Digite o nome seu filme aqui"  type="text"  formControlName="texto">
-           
-          <input type="submit" value="Salvar">
-        
-      </form>
-    </div>
+<div class='body-search'>
+  <div class='form'>  
+  <form class="formulario"  novalidate  [formGroup]="formulario" (ngSubmit)='onSubmit()'>
     
-    <br>
+    <input matInput class="search" name='seach' id='search' placeholder="  PESQUISE UM FILME"  type="search"  formControlName="texto">
+      
+    <div class='input'>
+    <input class="button"  type= 'image'  src="https://lh3.googleusercontent.com/proxy/viYkTfmQZauC43kzMP_TVR3q_-aygq7N6DNlB5BcBdJJP8iPSHUZj5VxRYxiwQ1lWj_0eOhbrqPDaLHTx6Jd7w4Hsw3dtI45wpWwRxQ" value="Salvar">
+  </div>
+    </form>
+  </div>
+</div>
+    
