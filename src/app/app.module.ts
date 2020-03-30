@@ -22,7 +22,7 @@ import { SelectGenersComponent } from './body/select-geners/select-geners.compon
     GenresListComponent,
     ViewMovieComponent,
     SearchComponent,
-    SelectGenersComponent
+    SelectGenersComponent,
   ],
   imports: [
     BrowserModule,
