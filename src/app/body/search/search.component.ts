@@ -31,7 +31,7 @@ export class SearchComponent implements OnInit {
   }
 
   private pesquisar(nomeFilme: string){
-    this.router.navigateByUrl('/buscar/'+nomeFilme);
+    this.router.navigateByUrl('/buscar/'+nomeFilme+'/'+1);
   }
 
 }
