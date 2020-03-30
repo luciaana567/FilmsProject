@@ -11,10 +11,10 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: GenresListComponent
+        component: ViewMovieComponent
       },
       {
-        path: ':genero',
+        path: ':genero/:pagina',
         component: GenresListComponent
       },
       
@@ -23,10 +23,6 @@ const routes: Routes = [
   {
     path: 'buscar',
     children: [
-      {
-        path: '',
-        component: SearchListComponent
-      },
       {
         path: ':buscar',
         component: SearchListComponent
@@ -37,10 +33,6 @@ const routes: Routes = [
   {
     path: 'detalhes',
     children: [
-      {
-        path: '',
-        component: ViewMovieComponent
-      },
       {
         path: ':id',
         component: ViewMovieComponent
