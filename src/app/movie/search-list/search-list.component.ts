@@ -17,13 +17,21 @@ export class SearchListComponent implements OnInit {
   public paginaAnt;
   public paginaAtual;
   public paginaProx;
-  public totalPagina = this.pagina.total_pages;
+  public totalPagina;
+
+  public baseUrlFoto ='https://image.tmdb.org/t/p/w300';
+  public NoPicture ='https://www.southernpipe.com/ASSETS/WEB_THEMES/SOUTHERNPIPES/images/NoImage.png';
+
 
   constructor( private service: Service, private activatedRoute: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void { 
     this.nomeFilme=this.activatedRoute.snapshot.params['buscar'];
-    this.setPagina(1);
+    this.paginaAtual = this.nomeFilme=this.activatedRoute.snapshot.params['pagina'];
+    this.paginaAtual = Number(this.paginaAtual);
+    this.paginaAnt = 0;
+    this.paginaProx = 2;
+    
     this.getterListFilms(this.nomeFilme,this.paginaAtual);
     
    }
@@ -43,6 +51,7 @@ export class SearchListComponent implements OnInit {
     this.service.getListSearch(nome,page).subscribe(
       (data: Pagina) =>{
         this.pagina = data;
+        this.totalPagina= this.pagina.total_pages;
       },
       (error: any) =>{
         this.error=error;
@@ -57,6 +66,7 @@ export class SearchListComponent implements OnInit {
     this.paginaAnt = pag-1;
     this.paginaProx = pag+1;
 
+    this.router.navigateByUrl('/buscar/'+this.nomeFilme+'/'+this.paginaAtual);
     this.getterListFilms(this.nomeFilme,this.paginaAtual);
   }
  
