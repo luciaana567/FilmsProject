@@ -21,11 +21,7 @@ export class SelectGenersComponent implements OnInit {
   constructor( private service: Service,private router: Router) { }
 
   ngOnInit(): void {
-    this.generoId='Todos';
-    this.generoName='Todos';
-    this.setGenero(this.generoId,this.generoName);
     this.getterListGeners();
-    
   }
 
    // pegar os gêneros da api
