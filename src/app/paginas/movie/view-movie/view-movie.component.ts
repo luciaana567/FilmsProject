@@ -23,6 +23,10 @@ export class ViewMovieComponent implements OnInit {
   public avaliacao:Number;
   public foto: string;
 
+  public baseUrlFoto ='https://image.tmdb.org/t/p/original';
+  public NoPicture ='https://www.southernpipe.com/ASSETS/WEB_THEMES/SOUTHERNPIPES/images/NoImage.png';
+
+
   constructor( private service: Service, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -41,7 +45,6 @@ export class ViewMovieComponent implements OnInit {
         this.duracao = this.filme.runtime;
         this.generos= this.filme.genres;
         this.avaliacao = this.filme.vote_average;
-        this.foto = 'https://image.tmdb.org/t/p/original'+this.filme.poster_path;
         console.log(this.generos);
       },
       (error: any) =>{

@@ -1,0 +1,50 @@
+.body {
+    width: auto;
+    height: 700px;
+    background-color: rgb(255,255,255);
+}
+
+.body mat-card {
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-image: linear-gradient(to right,rgb(243,117,122),rgb(243,194,72));
+    border-radius: 10px;
+    box-shadow:  2px 5px 5px 5px rgba(50, 50, 50, 0.5);
+}
+
+.card-text {
+    margin-left: 450px;
+    margin-top: -490px;
+    margin-right: 20px;
+    text-align: left;    
+    font-family: 'Dosis', sans-serif;
+}
+
+.card-text ul {
+    display: inline-block;
+    margin-right: 3px;
+    margin-bottom: 100px;
+}
+
+.card-image {
+    margin-top: 20px;
+    margin-left: 25px;
+}
+
+/* Imagem de cada card */
+.imageTrue img{
+    width: 404px;
+    height: 479px;
+    border-radius: 3px;
+    box-shadow:  2px 5px 10px 5px rgba(50, 50, 50, 0.5);
+}
+
+/* Cada card de filme que não possui cartaz*/
+.imageFalse img { 
+    width: 404px;
+    height: 479px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;    
+    box-shadow:  2px 5px 10px 5px rgba(50, 50, 50, 0.5);
+}

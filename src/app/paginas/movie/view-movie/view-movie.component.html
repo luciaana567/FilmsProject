@@ -1,13 +1,37 @@
-<div>
-    <h1>{{nome}}</h1>
-    <h3>Descrição:</h3> 
-    <p>{{descricao || "não há informações"}} </p>
-    <h5> Data de Lançamento : {{dataDeLancamento}}</h5> 
-    <p>Tempo de execução : {{duracao}}</p>
-    <p>Avaliação média: {{avaliacao}}</p>
-    <ul *ngFor='let i of generos'>
-        <p>{{i.name}}</p>
-    </ul>
-    <br>
-    <img mat-card-image [src]="foto" >
+<div class='body'>
+    <mat-card >
+        <br>
+        <div class='card-image'>
+            <div  class='imageTrue' *ngIf='filme.poster_path!=null'>
+                    <img mat-card-image [src]="baseUrlFoto+filme.poster_path">
+            </div>
+            <div class="imageFalse" *ngIf='filme.poster_path===null'>
+                    <img mat-card-image [src]="NoPicture">
+            </div>
+    </div>
+        <div class="card-text">
+            <h1>{{nome}}</h1>
+                <h3>Descrição:</h3> 
+                <p>{{descricao || "não há informações"}} </p>
+                <h5> Data de Lançamento: </h5><h5>{{dataDeLancamento || "não há informação"}}</h5> 
+                <h5>Tempo de execução :</h5><p>{{duracao || 0}} minutos</p>
+                <h5>Avaliação média: </h5><h5> <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="25px" width="34px"
+                    viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+                    <path style="fill:#FFDC64;" d="M499.92,188.26l-165.839-15.381L268.205,19.91c-4.612-10.711-19.799-10.711-24.411,0l-65.875,152.97
+                    L12.08,188.26c-11.612,1.077-16.305,15.52-7.544,23.216l125.126,109.922L93.044,483.874c-2.564,11.376,9.722,20.302,19.749,14.348
+                    L256,413.188l143.207,85.034c10.027,5.954,22.314-2.972,19.75-14.348l-36.619-162.476l125.126-109.922
+                    C516.225,203.78,511.532,189.337,499.92,188.26z"/>
+                    <path style="fill:#FFC850;" d="M268.205,19.91c-4.612-10.711-19.799-10.711-24.411,0l-65.875,152.97L12.08,188.26
+                    c-11.612,1.077-16.305,15.52-7.544,23.216l125.126,109.922L93.044,483.874c-2.564,11.376,9.722,20.302,19.749,14.348l31.963-18.979
+                    c4.424-182.101,89.034-310.338,156.022-383.697L268.205,19.91z"/></svg> {{avaliacao|| 0}}</h5> 
+                <h5>Gêneros </h5>
+                <div>
+                    <ul *ngFor='let i of generos'>
+                        <p>{{i.name|| 'sem informação'}}</p>
+                    </ul>
+                </div>
+        </div>
+         
+                
+    </mat-card>
 </div>

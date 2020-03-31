@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { GenresListComponent } from './movie/genres-list/genres-list.component';
-import { SearchListComponent } from './movie/search-list/search-list.component';
-import { ViewMovieComponent } from './movie/view-movie/view-movie.component';
-import { NoFoundComponent } from './movie/no-found/no-found.component';
+import { GenresListComponent } from './paginas/movie/genres-list/genres-list.component';
+import { SearchListComponent } from './paginas/movie/search-list/search-list.component';
+import { ViewMovieComponent } from './paginas/movie/view-movie/view-movie.component';
+import { NoFoundComponent } from './paginas/movie/no-found/no-found.component';
 import { HomeComponent } from './paginas/home/home.component';
 
 const routes: Routes = [
