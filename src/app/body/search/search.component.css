@@ -1,8 +1,10 @@
 .body-search{
     width: 100%;
-    height: 150px;
-    background: none;   
-    
+    background-image: url(https://pipocasclub.com.br/wp-content/uploads/2019/10/netflix-3.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: lighten;
+
+    margin-bottom: 100px;
 }
 
 *,
@@ -12,8 +14,8 @@
 }
 
 .form{
-    padding-top: 50px;
-    position: relative;
+    padding-top: 150px;
+    padding-bottom: 50px;
 }
 
 ::-webkit-input[type=search]::placeholder {
@@ -40,7 +42,6 @@
     outline: 0;
     border: none;
     width: 50%;
-    position: relative;
     z-index: 2;
     border-radius: 5px 0px 0px 5px;
     font-size: 19px;
@@ -61,7 +62,6 @@
   .button {
     padding: 10px 15px ;
     border: none;
-    margin-top: auto;
     background-color: rgb(179, 2, 52);
     border-radius:  0px 5px 5px 0px;
     width: 23px;
