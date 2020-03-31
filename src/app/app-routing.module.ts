@@ -3,21 +3,19 @@ import { Routes, RouterModule } from '@angular/router';
 import { GenresListComponent } from './movie/genres-list/genres-list.component';
 import { SearchListComponent } from './movie/search-list/search-list.component';
 import { ViewMovieComponent } from './movie/view-movie/view-movie.component';
+import { NoFoundComponent } from './movie/no-found/no-found.component';
+import { HomeComponent } from './paginas/home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'fimes', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent},
   {
     path: 'filmes',
     children: [
       {
-        path: '',
-        component: ViewMovieComponent
-      },
-      {
         path: ':genero/:pagina',
         component: GenresListComponent
-      },
-      
+      },      
     ]
   },
   {
@@ -27,7 +25,6 @@ const routes: Routes = [
         path: ':buscar/:pagina',
         component: SearchListComponent
       },
-      
     ]
   },
   {
@@ -36,11 +33,18 @@ const routes: Routes = [
       {
         path: ':id',
         component: ViewMovieComponent
-      },
-      
+      },      
     ]
   },
-  
+  {
+    path: 'noFound',
+    children: [
+      {
+        path: ':noFound',
+        component: NoFoundComponent
+      },
+    ]
+  },
 ];
 
 @NgModule({

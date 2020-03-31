@@ -14,6 +14,10 @@ import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './body/search/search.component';
 import { SelectGenersComponent } from './body/select-geners/select-geners.component';
+import { HomeComponent } from './paginas/home/home.component';
+import { FilmesComponent } from './paginas/filmes/filmes.component';
+import { NavComponent } from './body/nav/nav.component';
+import { NoFoundComponent } from './movie/no-found/no-found.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +27,10 @@ import { SelectGenersComponent } from './body/select-geners/select-geners.compon
     ViewMovieComponent,
     SearchComponent,
     SelectGenersComponent,
+    HomeComponent,
+    FilmesComponent,
+    NavComponent,
+    NoFoundComponent,
   ],
   imports: [
     BrowserModule,
