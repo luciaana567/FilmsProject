@@ -1,1 +1,27 @@
-<p>nav works!</p>
+<div class='nav-body'>
+    <a class='logo'><img src=''></a>
+
+    <div class="nav-right">
+        <ul class="menu"> <!-- Esse é o 1 nivel ou o nivel principal -->
+        <li><a class='principal' routerLink="/home">Home</a></li>
+        <li><a class='principal'>Gêneros</a>
+            <ul class="submenu" > <!-- Esse é o 2 nivel ou o primeiro Drop Down -->
+                <li (click)="setGenero('Todos','Todos')"><a>Todos</a></li>
+                <li (click)="setGenero('Populares','Populares')"><a>Populares</a></li>
+                <li (click)="setGenero(18,'Ação')"><a >Ação</a></li>
+                <li (click)="setGenero(12,'Aventura')"><a>Aventura</a></li>                
+                <li (click)="setGenero(16,'Animação')"><a>Animação</a></li>
+                <li (click)="setGenero(35,'Comédia')"><a>Comédia</a></li>
+                <li (click)="setGenero(18,'Drama')"><a>Drama</a></li>
+                <li (click)="setGenero(10749,'Romance')"><a>Romance</a></li>
+                <li (click)="setGenero(10752,'Guerra')"><a>Comédia</a></li>                
+                <li (click)="setGenero(27,'Terror')"><a>Terror</a></li>
+                <li (click)="setGenero(878,'Ficção científica')"><a>Ficção</a></li>
+            </ul>          
+        </li>
+        </ul>
+    </div>    
+</div>
+
+
+    
