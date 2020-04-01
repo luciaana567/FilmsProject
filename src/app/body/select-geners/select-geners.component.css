@@ -3,3 +3,6 @@
     float: right;
     margin-right: 150px;
 }
+.select mat-label p{
+    color:#585F65;
+}
