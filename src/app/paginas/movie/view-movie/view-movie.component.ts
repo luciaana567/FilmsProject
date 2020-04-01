@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FilmesDetalhes } from 'src/app/module/movieDetails.model';
 import { Genero } from 'src/app/module/genre.model';
 import { Service } from 'src/app/service/service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-movie',
@@ -27,7 +27,7 @@ export class ViewMovieComponent implements OnInit {
   public NoPicture ='https://www.southernpipe.com/ASSETS/WEB_THEMES/SOUTHERNPIPES/images/NoImage.png';
 
 
-  constructor( private service: Service, private activatedRoute: ActivatedRoute) { }
+  constructor( private service: Service, private activatedRoute: ActivatedRoute,private router: Router) { }
 
   ngOnInit(): void {
     this.idFilme =  this.activatedRoute.snapshot.params['id'];
@@ -55,4 +55,9 @@ export class ViewMovieComponent implements OnInit {
 
   }
 
+  //escolher o genero da página
+  setGenero(id: any, name:string){
+    this.service.setGenero(id,name);
+    this.router.navigateByUrl('/filmes/' +id+'/'+1);
+  }
 }
