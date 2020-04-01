@@ -4,6 +4,8 @@
     background-color: #020D18;
 }
 
+/*link para mostar caminho percorrido*/
+
 .caminho{
     text-align: left;
     font-size: 35px;
@@ -22,6 +24,7 @@
     transition: 0.5s;
 }
 
+/* definições gerais do card*/
 .card{
     background-color: #020D18;
     margin-top: 50px;
@@ -36,7 +39,9 @@
     text-align: left;    
     font-family: 'Dosis', sans-serif;
     background-color: #020D18;
+    position: relative;
 }
+
 .card-text h1{
     color:rgb(255,255,255);
     font-size: 35px;
@@ -49,8 +54,8 @@
 .card-text p {
     color:#2D5987;
     font-size: 20px;
-    text-align: right;
-    margin-right: 350px;
+    text-align: left;
+    margin-left: 200px;
     margin-top: -33px;
 }
 
@@ -71,13 +76,14 @@
     margin-bottom: 100px;
 }
 
+/* Imagem de cada card */
 .card-image {
     margin-top: 20px;
     margin-left: 25px;
     background-color: #020D18;
 }
 
-/* Imagem de cada card */
+
 .imageTrue img{
     width: 404px;
     height: 479px;

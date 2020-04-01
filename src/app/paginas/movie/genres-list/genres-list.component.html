@@ -1,8 +1,10 @@
+  <!--Verificar se o nome pesquisado esta de acordo com a pesquisa-->
   <div *ngIf="genero !=atualizar()"></div>
   <div *ngIf="genero ===atualizar()" ></div>
 
 <app-select-geners></app-select-geners>
 
+<!--Lista de Filmes-->
 <div class="body-list" *ngIf="pageNoFound()===false">
     
     <div class="list-Film">
@@ -35,7 +37,7 @@
            </mat-card>
         </ul>
     </div>
-      
+    <!--Paginacao-->
     <div class="paginacao" *ngIf="pagina.total_results>20">
      
         <div   *ngIf ="paginaAtual===1">
@@ -74,5 +76,5 @@
     </div>
 </div>
 
-
+<!--Verficar se a pagina precisa ser direcionada-->
 <div class="noResults" *ngIf="pageNoFound()===true"></div>

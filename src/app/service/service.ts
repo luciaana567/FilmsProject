@@ -83,6 +83,7 @@ export class Service {
   }
   
 
+  //setar o genero escolhido, globalmente
   public setGenero(id:any, nome:string){
     this.generoId=id;
     this.generoNome=nome;

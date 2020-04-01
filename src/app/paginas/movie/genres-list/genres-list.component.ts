@@ -81,6 +81,7 @@ export class GenresListComponent implements OnInit {
     this.router.navigateByUrl('/detalhes/'+id);
   }
 
+  //redirencionar para uma pagina de não encontrado
   pageNoFound():boolean{
     if(this.pagina.total_results==0){
       this.router.navigateByUrl('/noFound/'+this.generoNome);

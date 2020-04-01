@@ -12,15 +12,17 @@
 }
 
 .body h1 a{
+    color: rgb(255255,255);
     cursor: pointer;
     transition: 1s;
+    color: rgb(255255,255);
 }
 .body h1 a:hover{
     color: rgb(221, 0, 63);
 }
 
 .msg h1{
-    color: rgb(0,0,0,0.8);
+    color: rgb(255255,255);
     margin-bottom: 130px;
     margin-top: -150px;
     margin-left: 40%;
