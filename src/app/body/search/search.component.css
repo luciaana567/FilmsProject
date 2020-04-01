@@ -53,12 +53,13 @@
   }
 
   .input {
-      margin-top: -42.9px;
-      margin-left: 79.5%;
+      margin-top: -40px;
+      margin-left: 71.9%;
   }
 
   .button {
-    padding: 10px 15px ;
+    margin-left: 0px;
+    padding: 20px 20px ;
     border: none;
     background-color: rgb(179, 2, 52);
     border-radius:  0px 5px 5px 0px;

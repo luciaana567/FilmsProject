@@ -28,12 +28,13 @@ export class GenresListComponent implements OnInit {
   constructor( private service: Service, private activatedRoute: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void { 
-    
-    this.genero=this.activatedRoute.snapshot.params['genero'];    
+
+    this.genero=this.activatedRoute.snapshot.params['genero'];
     this.paginaAtual = this.activatedRoute.snapshot.params['pagina'];
     this.generoNome= this.service.getGeneroNome();
     this.paginaAtual = Number(this.paginaAtual);
     this.setPagina(this.paginaAtual);
+    
    }
 
   //função para atualizar dados da  página
