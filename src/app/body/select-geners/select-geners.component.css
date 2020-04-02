@@ -6,3 +6,11 @@
 .select mat-label p{
     color:#585F65;
 }
+
+@media screen and (max-width: 750px) {
+    .select{
+        float: right;
+        margin-right: 20%;
+    }
+   
+}

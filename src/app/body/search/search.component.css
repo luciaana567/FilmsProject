@@ -4,6 +4,7 @@
     background-image: url(https://pipocasclub.com.br/wp-content/uploads/2019/10/netflix-3.jpg);
     background-repeat: no-repeat;
     background-blend-mode: lighten;
+    background-position: center;
 }
 
 *,
@@ -36,14 +37,15 @@
   
   input.search {
     position: relative;
-    margin-left:300px;
+    margin-left:25%;
+    margin-right: 40%;
     text-align: center;
     padding: 10px 50px ;
     outline: 0;
     border: none;
     width: 50%;
     z-index: 2;
-    border-radius: 5px 0px 0px 5px;
+    border-radius: 5px;
     font-size: 19px;
     -webkit-box-shadow: 0 5px 10px rgba(75, 72, 72, 0.2);
     -moz-box-shadow: 0 5px 10px rgba(75, 72, 72, 0.2);
@@ -54,24 +56,42 @@
     background-color: rgb(179, 2, 52);
   }
 
-  .input {
-      margin-top: -40px;
-      margin-left: 71.9%;
-  }
-
-  .button {
-    margin-left: 0px;
-    padding: 20px 20px ;
-    border: none;
-    background-color: none;
-    border-radius:  0px 5px 5px 0px;
-    color:none;
-  }
-
+  
   input[type=submit]::placeholder {
     color: none;
     background-color: none;
   }
 
+
+  /* Responsivo*/
+  @media screen and (max-width: 750px) {
+
+    .body-search{ 
+      width: auto; 
+      background-position: center;
+      height: auto;
+    }
+    input.search {
+      margin-left: 20%; margin-right: 20%;
+      text-align: center;
+      font-size: 90%;
+    }
+
+  }
+
   
-  
+  @media screen and (max-width: 400px) {
+
+    .body-search{ 
+      width: auto; 
+      background-position: center;
+      height: auto;
+    }
+    input.search {
+      margin-left: 20%; margin-right: 10%;
+      float: center;
+      text-align: justify;
+      font-size: 60%;
+    }
+
+  }

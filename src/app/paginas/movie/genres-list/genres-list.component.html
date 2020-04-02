@@ -10,7 +10,7 @@
     <div class="list-Film">
      <br>   
      <br>
-    <h1><a routerLink="/home">Home</a>>{{generoNome}}</h1>
+    <h1><a routerLink="/home">Home</a> > {{generoNome}}</h1>
 
         <ul *ngFor ="let i of pagina.results" >
             <mat-card (click)='visualizarFilmes(i.id)'>  

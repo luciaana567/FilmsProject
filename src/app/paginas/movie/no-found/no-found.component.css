@@ -1,7 +1,6 @@
 .body {
     width: auto;
     height: 300px;
-    
     font-family: 'Dosis', sans-serif;
 }
 .body h1 {
@@ -9,21 +8,54 @@
     margin-left: 50px;
     margin-top: 30px;
     font-size: 35px;
+    color: rgb(255,255,255);
 }
 
 .body h1 a{
-    color: rgb(255255,255);
     cursor: pointer;
     transition: 1s;
-    color: rgb(255255,255);
 }
-.body h1 a:hover{
-    color: rgb(221, 0, 63);
-}
+.body h1 a:hover{ color: rgb(221, 0, 63);}
 
 .msg h1{
-    color: rgb(255255,255);
+    color: rgb(255,255,255);
     margin-bottom: 130px;
     margin-top: -150px;
     margin-left: 40%;
+}
+
+/*reponsivo*/
+@media only screen and (max-device-width: 750px) {
+
+
+    .body h1 {
+        margin-left: 20%;
+        margin-top: 15%;
+        margin-right: 40%;
+    }
+
+    .msg h1{
+        margin-bottom: 50%;
+        margin-top: -20%;
+        margin-left: 10%;
+        margin-right: 40%;
+    }
+}
+
+@media only screen and (max-device-width: 400px) {
+
+
+    .body h1 {
+        margin-left: 20%;
+        margin-top: 15%;
+        font-size: 90%;    
+    }
+
+    .msg h1{
+        margin-bottom: 50%;
+        margin-top: -20%;
+        margin-left: 40%;
+        margin-right: 40%;
+        font-size: 90%;
+    }
 }
