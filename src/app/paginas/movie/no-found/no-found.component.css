@@ -32,13 +32,14 @@
         margin-left: 20%;
         margin-top: 15%;
         margin-right: 40%;
+        font-size: 98%;
     }
 
     .msg h1{
         margin-bottom: 50%;
         margin-top: -20%;
-        margin-left: 10%;
-        margin-right: 40%;
+        margin-left: 25%;
+        margin-right: 20%;
     }
 }
 
@@ -48,14 +49,17 @@
     .body h1 {
         margin-left: 20%;
         margin-top: 15%;
-        font-size: 90%;    
+        font-size: 80%;  
+        margin-right: 20%;  
     }
 
     .msg h1{
         margin-bottom: 50%;
-        margin-top: -20%;
+        margin-top: -50%;
         margin-left: 40%;
         margin-right: 40%;
         font-size: 90%;
+        text-align: center;
+        float: center;
     }
 }

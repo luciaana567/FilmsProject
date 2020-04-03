@@ -2,6 +2,7 @@
     width: auto;
     height: 700px;
     background-color: #020D18;
+    margin-bottom: 100px;
 }
 
 /*link para mostar caminho percorrido*/
@@ -73,7 +74,7 @@
 .card-text ul {
     display: inline-block;
     margin-right: 3px;
-    margin-bottom: 100px;
+    margin-bottom: 10px;
 }
 
 /* Imagem de cada card */
@@ -88,15 +89,135 @@
     width: 404px;
     height: 479px;
     border-radius: 3px;
-    border-color: rgb(255,255,255);
-    border:0.5px;
 }
 
 /* Cada card de filme que não possui cartaz*/
 .imageFalse img { 
     width: 404px;
-    height: 479px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;    
-    box-shadow:  2px 5px 10px 5px rgba(50, 50, 50, 0.5);
+    height: 479px;   
+    border-radius: 3px;
+    border:0.5px;
+}
+
+
+@media screen and (max-width: 1084px) {
+    .body {
+        width: auto;
+        height: auto;
+    }
+    
+    .card-image {
+        margin-top: 5%;
+        margin-left: 20%;
+    }
+
+    .card-text {
+        margin-left: 5%;
+        margin-top: 10%;
+        margin-right: 20%;
+        text-align: left;    
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .card{
+        margin-top: 10%;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    .caminho{
+        font-size: 30px;
+        margin-bottom: 10%;
+        margin-left: 10%;
+    }
+    .card-image {
+        margin-top: 5%;
+        margin-left: 15%;
+    }
+
+    .card-text {
+        margin-left: 5%;
+        margin-top: 10%;
+        margin-right: 20%;
+        text-align: left;    
+        position: relative;
+    }
+
+    .imageTrue img{
+        width: 304px;
+        height: 379px;
+    }
+    
+    /* Cada card de filme que não possui cartaz*/
+    .imageFalse img { 
+        width: 304px;
+        height: 379px; 
+    }
+    
+}
+
+
+@media screen and (max-width: 555px) {
+
+.card{
+        margin-left: 10%;
+        margin-right: 15%;
+    }
+   
+.card-text {
+    margin-left: 0%;
+    margin-top: 10%;
+    margin-right: 20%;
+}
+
+.card-text h1 { font-size: 30px;}
+.card-text h5 { font-size: 15px;}
+.card-text h3 { font-size: 15px;} 
+.card-text h6 { font-size: 10px;}
+.card-text p { font-size: 15px; }
+.card-text a{ font-size: 15px; }
+
+.imageTrue img{
+    width: 254px;
+    height: 329px;
+}
+
+/* Cada card de filme que não possui cartaz*/
+.imageFalse img { 
+    width: 254px;
+    height: 329px; 
+}
+}
+
+
+@media screen and (max-width: 461px) {
+    .card{
+        margin-top: 10%;
+        margin-left: 5%;
+        margin-right: 10%;
+    }
+
+    .card-image {
+        margin-top: 5%;
+        margin-left: 10%;
+        margin-right: 5%;
+    }
+
+    .card-text {
+        margin-left: 0%;
+        margin-top: 10%;
+        margin-right: 20%;
+    }
+
+ 
+.card-text p { 
+    margin-left: 0%;
+    margin-top: 20px;
+ }
+    
+ .card-text ul {
+    display: list-item;
+}
 }
