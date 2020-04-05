@@ -18,7 +18,7 @@ export class Service {
   private numPage = '&page=';
   private generoId;
   private generoNome;
-  
+  private contraste:boolean;
 
   constructor(private http: HttpClient) {}
 
@@ -94,6 +94,14 @@ export class Service {
   }
   public getGeneroNome():any{
     return this.generoNome;
+ }
+
+ public setContraste(status:boolean){
+  this.contraste=status;
+ }
+
+ public getContraste(){
+   return this.contraste;
  }
 
 }

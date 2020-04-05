@@ -1,9 +1,21 @@
-<div class='body'>
+
+<div class='body' *ngIf="!altoContraste">
+    <button (click)='Contraste()'>ALTO-CONTRASTEe</button>
+    <app-nav [altoContraste]='altoContraste' ></app-nav>
+
+    <app-search ></app-search>
+    <router-outlet ></router-outlet>
     
-    <app-nav></app-nav>
+</div>
 
-    <app-search></app-search>
 
-    <router-outlet></router-outlet>
+<div class='body' *ngIf="altoContraste" [ngStyle]="{'background-color': 'black', 'color':'#fff'}">
+    
+    <button (click)='Contraste()'>ALTO-CONTRASTE</button>
+    <app-nav [altoContraste]='altoContraste'></app-nav>
+
+    <app-search ></app-search>
+
+    <router-outlet ></router-outlet>
     
 </div>
