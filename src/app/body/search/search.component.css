@@ -3,7 +3,6 @@
     width: 100%;
     background-image: url(https://pipocasclub.com.br/wp-content/uploads/2019/10/netflix-3.jpg);
     background-repeat: no-repeat;
-    background-blend-mode: lighten;
     background-position: center;
 }
 
@@ -32,13 +31,12 @@
   
   .search-form {
     max-width: 400px;
-    margin: 50px auto;
+    margin: 50px;
   }
   
   input.search {
     position: relative;
     margin-left:25%;
-    margin-right: 40%;
     text-align: center;
     padding: 10px 50px ;
     outline: 0;

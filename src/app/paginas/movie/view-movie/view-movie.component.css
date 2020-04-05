@@ -100,7 +100,7 @@
 }
 
 
-@media screen and (max-width: 1084px) {
+@media screen and (max-width: 1000px) {
     .body {
         width: auto;
         height: auto;
