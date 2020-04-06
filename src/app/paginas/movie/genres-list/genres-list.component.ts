@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Pagina } from 'src/app/module/page.model';
 import { Service } from 'src/app/service/service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -12,12 +12,13 @@ export class GenresListComponent implements OnInit {
 
   public pagina = new Pagina();
   private error: any;
-
+  
   //paginacao
   public paginaAnt;
   public paginaAtual;
   public paginaProx;
   public totalPagina = this.pagina.total_pages;
+  public contraste;
   
   //váriaveis para pegar informações do gênero
   public genero;
@@ -28,17 +29,27 @@ export class GenresListComponent implements OnInit {
   constructor( private service: Service, private activatedRoute: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void { 
-
     this.genero=this.activatedRoute.snapshot.params['genero'];
     this.paginaAtual = this.activatedRoute.snapshot.params['pagina'];
     this.generoNome= this.service.getGeneroNome();
     this.paginaAtual = Number(this.paginaAtual);
     this.setPagina(this.paginaAtual);
-    
+    this.pageNoFound();
+    this.contraste=this.service.getContraste();
    }
 
+
+  //função para atualizar contraste
+  atualizarContraste():boolean{
+    if(this.contraste!=this.service.getContraste()){
+      this.contraste=this.service.getContraste()
+      return false;
+    }
+    return true;
+  }
+
   //função para atualizar dados da  página
-  atualizar():any{
+  atualizarPagina():any{
       let g = this.activatedRoute.snapshot.params['genero'];
       if(this.genero!= g && g!= null){
         this.genero=g;

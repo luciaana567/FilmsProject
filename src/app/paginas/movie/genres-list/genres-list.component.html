@@ -1,11 +1,14 @@
   <!--Verificar se o nome pesquisado esta de acordo com a pesquisa-->
-  <div *ngIf="genero !=atualizar()"></div>
-  <div *ngIf="genero ===atualizar()" ></div>
+  <div *ngIf="genero !=atualizarPagina() "></div>
+  <div *ngIf="genero ===atualizarPagina()" ></div>
+
+  <!--Verificar o status do contraste-->
+  <div *ngIf="!atualizarContraste() || atualizarContraste()" ></div>
 
 <app-select-geners></app-select-geners>
 
 <!--Lista de Filmes-->
-<div class="body-list" *ngIf="pageNoFound()===false">
+<div class="body-list" *ngIf="pageNoFound()===false && contraste===false">
     
     <div class="list-Film">
      <br>   
@@ -13,7 +16,7 @@
     <h1><a routerLink="/home">Home</a> > {{generoNome}}</h1>
 
         <ul *ngFor ="let i of pagina.results" >
-            <mat-card (click)='visualizarFilmes(i.id)'>  
+            <mat-card (click)='visualizarFilmes(i.id)' >  
                 <div class='image'>
                     <div  class='imageTrue' *ngIf='i.poster_path!=null'>
                         <img mat-card-image [src]="baseUrlFoto+i.poster_path">
@@ -76,5 +79,79 @@
     </div>
 </div>
 
+<!--Caso o contraste seja ativado-->
+<div class="body-list" *ngIf="pageNoFound()===false && contraste!==false">
+    
+    <div class="list-Film">
+     <br>   
+     <br>
+    <h1><a routerLink="/home"  [ngStyle]="{'color': 'yellow'}">Home</a> > {{generoNome}}</h1>
+
+        <ul *ngFor ="let i of pagina.results" >
+            <mat-card (click)='visualizarFilmes(i.id)' [ngStyle]="{'background-color': 'black', 'border-style': 'solid', 'border-color':'white'}">  
+                <div class='image'>
+                    <div  class='imageTrue' *ngIf='i.poster_path!=null'>
+                        <img [ngStyle]="{'filter':' grayscale(100%) contrast(120%)'}" mat-card-image [src]="baseUrlFoto+i.poster_path">
+                    </div>
+                    <div class="imageFalse" *ngIf='i.poster_path===null'>
+                        <img  [ngStyle]="{'filter':' grayscale(100%) contrast(120%)'}" mat-card-image [src]="NoPicture">
+                    </div>
+                    <p class='voto' [ngStyle]="{'color': 'white'}"> <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="15px" width="24px"
+                        viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+                        <path style="fill:#FFDC64;" d="M499.92,188.26l-165.839-15.381L268.205,19.91c-4.612-10.711-19.799-10.711-24.411,0l-65.875,152.97
+                        L12.08,188.26c-11.612,1.077-16.305,15.52-7.544,23.216l125.126,109.922L93.044,483.874c-2.564,11.376,9.722,20.302,19.749,14.348
+                        L256,413.188l143.207,85.034c10.027,5.954,22.314-2.972,19.75-14.348l-36.619-162.476l125.126-109.922
+                        C516.225,203.78,511.532,189.337,499.92,188.26z"/>
+                        <path style="fill:#FFC850;" d="M268.205,19.91c-4.612-10.711-19.799-10.711-24.411,0l-65.875,152.97L12.08,188.26
+                        c-11.612,1.077-16.305,15.52-7.544,23.216l125.126,109.922L93.044,483.874c-2.564,11.376,9.722,20.302,19.749,14.348l31.963-18.979
+                        c4.424-182.101,89.034-310.338,156.022-383.697L268.205,19.91z"/>
+                    </svg>{{i.vote_average}}</p>
+                    <h4 class="titulo"  [ngStyle]="{'color': 'yellow'}">{{i.title}}</h4>
+               </div>
+               
+           </mat-card>
+        </ul>
+    </div>
+    <!--Paginacao-->
+    <div class="paginacao" *ngIf="pagina.total_results>20">
+     
+        <div   *ngIf ="paginaAtual===1">
+            
+            <button [ngStyle]="{'background-color': 'black', 'color':'yellow'}"  (click)="setPagina(1)">1</button> 
+            <button [ngStyle]="{'background-color': 'black', 'color':'yellow'}" (click)="setPagina(paginaProx)">{{paginaProx}}</button>
+            <button [ngStyle]="{'background-color': 'black', 'color':'yellow'}" (click)="setPagina(pagina.total_pages)">{{pagina.total_pages}}</button>       
+        </div> 
+        <div *ngIf ="paginaAtual===2">
+                <a [ngStyle]="{'color': 'yellow'}"  (click)="setPagina(1)">INÍCIO</a> 
+                <button [ngStyle]="{'background-color': 'black', 'color':'yellow'}" class="button2" (click)="setPagina(paginaAtual)">{{paginaAtual}}</button>
+                <button [ngStyle]="{'background-color': 'black', 'color':'yellow'}" class="button3" (click)="setPagina(paginaProx)">{{paginaProx}}</button>
+                <a [ngStyle]="{'color': 'yellow'}" (click)="setPagina(pagina.total_pages)">FIM</a>
+        </div >   
+    
+        <div  *ngIf ="paginaAtual>2 && paginaProx<pagina.total_pages " >
+            <a [ngStyle]="{'color': 'yellow'}"  (click)="setPagina(1)">INÍCIO</a>
+            <button [ngStyle]="{'background-color': 'black', 'color':'yellow'}" (click)="setPagina(paginaAnt)">{{paginaAnt}}</button>
+            <button [ngStyle]="{'background-color': 'black', 'color':'yellow'}" (click)="setPagina(paginaAtual)">{{paginaAtual}}</button>
+            <button [ngStyle]="{'background-color': 'black', 'color':'yellow'}" (click)="setPagina(paginaProx)">{{paginaProx}}</button>
+            <a [ngStyle]="{'color': 'yellow'}" (click)="setPagina(pagina.total_pages)">FIM</a>
+        </div>   
+    
+        <div  *ngIf ="paginaAtual>2 && paginaProx==pagina.total_pages " >
+                <a [ngStyle]="{'color': 'yellow'}"  (click)="setPagina(1)">INÍCIO</a>
+                <button [ngStyle]="{'background-color': 'black', 'color':'yellow'}" (click)="setPagina(paginaAnt)">{{paginaAnt}}</button>
+                <button [ngStyle]="{'background-color': 'black', 'color':'yellow'}" (click)="setPagina(paginaAtual)">{{paginaAtual}}</button>
+                <button [ngStyle]="{'background-color': 'black', 'color':'yellow'}" (click)="setPagina(pagina.total_pages)">{{pagina.total_pages}}</button>
+        </div>   
+    
+        <div  *ngIf ="paginaAtual==pagina.total_pages">
+                <a [ngStyle]="{'color': 'yellow'}"  (click)="setPagina(1)">INÍCIO</a>
+                <button [ngStyle]="{'background-color': 'yellow', 'color':'black'}" (click)="setPagina(paginaAnt)">{{paginaAnt}}</button>
+                <button [ngStyle]="{'background-color': 'yellow', 'color':'black'}" (click)="setPagina(pagina.total_pages)">{{pagina.total_pages}}</button>
+        </div>   
+    </div>
+</div>
+
+
+
 <!--Verficar se a pagina precisa ser direcionada-->
-<div class="noResults" *ngIf="pageNoFound()===true"></div>
+<div class="body-list" *ngIf="pageNoFound()===true"></div>

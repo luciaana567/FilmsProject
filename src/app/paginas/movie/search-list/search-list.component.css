@@ -1,20 +1,22 @@
+
 /* body*/
 .body-list{
     margin-top: 0px;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     margin-left: 0px;
     margin-right: 0px;
     width: auto;
-    background-color:  #020D18;
+    height: 88%;
+    background-color:  none;
 }
 
 
 /* lista de filme*/
 .list-Film{
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     margin-left: 100px;
     margin-top: 0px;
-    background-color: #020D18;
+    background-color: none;
 }
 .list-Film h1{
     text-align: left;
@@ -37,7 +39,7 @@
 .list-Film ul{
     list-style: none;
     float: left;
-    background-color: #020D18;
+    background-color: none;
 }
 
 /* Cada card de filme*/
@@ -97,8 +99,8 @@
 /* paginacao body*/
 .paginacao {
     margin-left: 30px;
-    margin-top: 0%;
-    margin-bottom: 50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     margin-right: 120px;
     float: right;
 }
@@ -119,7 +121,7 @@
 .paginacao button {
     padding: 15px 15px;
     margin-top:3px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     margin-right: 3px;
     margin-left: 3px;
     background-color: rgb(221, 0, 63);

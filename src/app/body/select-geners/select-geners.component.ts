@@ -14,6 +14,7 @@ export class SelectGenersComponent implements OnInit {
   public listGeneros = new ListaGenero();
   private error: any;
   public panelOpenState =false;
+  contraste;
 
   public generoId;
   public generoName;
@@ -22,6 +23,16 @@ export class SelectGenersComponent implements OnInit {
 
   ngOnInit(): void {
     this.getterListGeners();
+    this.contraste=this.service.getContraste();
+  }
+
+  //função para atualizar contraste
+  atualizarContraste():boolean{
+    if(this.contraste!=this.service.getContraste()){
+      this.contraste=this.service.getContraste();
+      return false;
+    }
+    return true;
   }
 
    // pegar os gêneros da api

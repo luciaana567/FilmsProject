@@ -52,11 +52,11 @@ export class Service {
       let data = this.getDate();
 
         if(this.generoId==='Todos'){
-          url =this.baseURL+this.getKey()+this.languageEn+'&sort_by=release_date.desc&include_adult=true&include_video=false'+this.numPage+page+'&primary_release_date.lte='+data; 
+          url =this.baseURL+this.getKey()+this.languageEn+'&sort_by=release_date.desc&include_adult=false&include_video=false'+this.numPage+page+'&primary_release_date.lte='+data; 
         }else if(this.generoId==='Populares'){
-          url =this.baseURL+this.getKey()+this.languageEn+'&sort_by=popularity.desc&include_adult=true&include_video=false'+this.numPage+page+'&primary_release_date.lte='+data; 
+          url =this.baseURL+this.getKey()+this.languageEn+'&sort_by=popularity.desc&include_adult=false&include_video=false'+this.numPage+page+'&primary_release_date.lte='+data; 
         }else {
-          url =this.baseURL+this.getKey()+this.languageEn+'&sort_by=release_date.desc&include_adult=true&include_video=false'+this.numPage+page+'&primary_release_date.lte='+data+genres+genero; 
+          url =this.baseURL+this.getKey()+this.languageEn+'&sort_by=release_date.desc&include_adult=false&include_video=false'+this.numPage+page+'&primary_release_date.lte='+data+genres+genero; 
         } 
     console.log(data)
       return this.http.get(url);
@@ -65,7 +65,7 @@ export class Service {
   //lista de filmes da pesquisa da api
   public getListSearch(nomeFilme:any,page:Number): Observable<any>{
 
-    const url='https://api.themoviedb.org/3/search/movie'+this.getKey()+'&query='+nomeFilme+this.numPage+page+'&include_adult=true';
+    const url='https://api.themoviedb.org/3/search/movie'+this.getKey()+'&query='+nomeFilme+this.numPage+page+'&include_adult=false';
     console.log(url)
     return this.http.get(url);
 

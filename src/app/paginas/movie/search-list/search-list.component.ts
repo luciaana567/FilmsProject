@@ -13,6 +13,9 @@ export class SearchListComponent implements OnInit {
   public pagina = new Pagina();
   private error: any;
   public nomeFilme:string;
+  public contraste;
+  
+
   //paginacao
   public paginaAnt;
   public paginaAtual;
@@ -27,17 +30,28 @@ export class SearchListComponent implements OnInit {
 
   ngOnInit(): void { 
     this.nomeFilme=this.activatedRoute.snapshot.params['buscar'];
-    this.paginaAtual = this.nomeFilme=this.activatedRoute.snapshot.params['pagina'];
+    this.paginaAtual = this.activatedRoute.snapshot.params['pagina'];
     this.paginaAtual = Number(this.paginaAtual);
     this.paginaAnt = 0;
     this.paginaProx = 2;
     
     this.getterListFilms(this.nomeFilme,this.paginaAtual);
     
+    
+    this.contraste=this.service.getContraste();
    }
 
+  //função para atualizar contraste
+  atualizarContraste():boolean{
+    if(this.contraste!=this.service.getContraste()){
+      this.contraste=this.service.getContraste();
+      return false;
+    }
+    return true;
+  }
+
   //função para atualizar dados da  página
-  atualizar():any{
+  atualizarPagina():any{
     let nome = this.activatedRoute.snapshot.params['buscar'];
     if(this.nomeFilme!= nome && nome!= null){
       this.nomeFilme=nome;

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,15 +9,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Filmes';
   altoContraste:boolean=false;
-  black='black';
+  
 
   Contraste(){
-    if(this.altoContraste== false){
-      this.altoContraste=true;
-    }else{
-      this.altoContraste=false;
-    }
-    
+    this.altoContraste=!this.altoContraste;
     console.log(this.altoContraste);
   }
 

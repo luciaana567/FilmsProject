@@ -1,6 +1,16 @@
-<div class='body'>
+<!--Verificar o status do contraste-->
+<div *ngIf="!atualizarContraste() || atualizarContraste()" ></div>
+
+<div class='body' *ngIf="contraste==false">
     <h1 ><a>Home</a> > Buscando por {{item}}</h1>
 </div>
+
+<div class='body' *ngIf="contraste==true">
+    <h1 ><a [ngStyle]="{'color': 'yellow'}" routerLink="/home">Home</a> > Buscando por {{item}}</h1>
+</div>
+
 <div class='msg'>
     <h1 >Não foram encontrados resultados!</h1>
 </div>
+
+

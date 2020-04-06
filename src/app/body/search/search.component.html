@@ -1,4 +1,6 @@
-<div class='body-search'>
+<div *ngIf="!atualizarContraste() || atualizarContraste()" ></div>
+
+<div class='body-search' *ngIf="contraste===false">
   <div class='form'>  
   <form class="formulario"  novalidate  [formGroup]="formulario" (ngSubmit)='onSubmit()'>
     
@@ -6,4 +8,14 @@
     </form>
   </div>
 </div>
+
     
+<div class='body-search' *ngIf="contraste===true"  [ngStyle]="{'filter':' grayscale(100%) contrast(120%)'}">
+  <div class='form'>  
+  <form class="formulario"  novalidate  [formGroup]="formulario" (ngSubmit)='onSubmit()'>
+    
+    <input  [ngStyle]="{'background-color':'black', 'color':'yellow', 'border-style': 'solid', 'border-color':'white'}" 
+    matInput class="search" name='seach' id='search' placeholder="  PESQUISE UM FILME"  type="search"  formControlName="texto">
+    </form>
+  </div>
+</div>

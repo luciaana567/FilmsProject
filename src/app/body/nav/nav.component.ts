@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ListaGenero } from 'src/app/module/genre.model';
 import { Router } from '@angular/router';
 import { Service } from 'src/app/service/service';
@@ -16,14 +16,25 @@ export class NavComponent implements OnInit {
   public generoId;
   public generoName;
 
+  @Input() altoContraste ;
+ 
+
   constructor( private service: Service,private router: Router) { }
 
   ngOnInit(): void {
     this.generoId='Todos';
     this.generoName='Todos';
+    this.service.setContraste(this.altoContraste);  
     
   }
-
+  
+  atualizar():boolean{
+    if(this.service.getContraste()!=this.altoContraste){
+      this.service.setContraste(this.altoContraste); 
+      return true;
+    }
+    return false;
+  }
 
     //escolher o genero da página
     setGenero(id: any, name:string){

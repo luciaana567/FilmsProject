@@ -16,6 +16,9 @@ export class ViewMovieComponent implements OnInit {
   public filme: FilmesDetalhes;
   private error: any;
   public nome:string;
+  contraste:boolean;
+
+  //dados do filmes
   public descricao:string;
   public dataDeLancamento:string;
   public generos: Array<Genero>;
@@ -32,6 +35,16 @@ export class ViewMovieComponent implements OnInit {
   ngOnInit(): void {
     this.idFilme =  this.activatedRoute.snapshot.params['id'];
     this.getterFilm(this.idFilme);
+    this.contraste=this.service.getContraste();
+  }
+
+  //função para atualizar contraste
+  atualizarContraste():boolean{
+    if(this.contraste!=this.service.getContraste()){
+      this.contraste=this.service.getContraste();
+      return false;
+    }
+    return true;
   }
 
   //pegar os dados da api para lista filmes por mais recentes e por genero
@@ -41,11 +54,12 @@ export class ViewMovieComponent implements OnInit {
         this.filme = data;
         this.nome=this.filme.original_title;
         this.descricao = this.filme.overview;;
-        this.dataDeLancamento = this.filme.release_date;
+        let lancamento=this.filme.release_date.split('-').reverse().join('-');
+        this.dataDeLancamento = lancamento;
         this.duracao = this.filme.runtime;
         this.generos= this.filme.genres;
         this.avaliacao = this.filme.vote_average;
-        console.log(this.generos);
+    
       },
       (error: any) =>{
         this.error=error;

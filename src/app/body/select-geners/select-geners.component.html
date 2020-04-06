@@ -1,6 +1,9 @@
+<!--Verificar o estado da variavel contraste-->
+<div *ngIf="!atualizarContraste() || atualizarContraste()" ></div>
+
 
 <!--Select de Gêneros dos Filmes-->  
-<div class='select'>
+<div class='select' *ngIf='contraste===false'>
 <mat-form-field>
     <mat-label><p>Gêneros</p></mat-label>
     <mat-select>
@@ -11,5 +14,20 @@
         </mat-option>
     </mat-select>
 </mat-form-field>
+</div>
 
+
+<div class='select' *ngIf='contraste===true'>
+    <mat-form-field>
+        <mat-label><p [ngStyle]="{'color':'yellow', 'border-style': 'solid', 'border-color':'white'}">Gêneros</p></mat-label>
+        <mat-select >
+            <div [ngStyle]="{'background-color':'black'}">
+            <mat-option value="Todos" (click)="setGenero('Todos','Todos')"><a  [ngStyle]="{'color':'yellow'}">Todos</a></mat-option>
+            <mat-option value="Populares" (click)="setGenero('Populares','Populares')"><a  [ngStyle]="{'color':'yellow'}">Populares</a></mat-option>
+            <mat-option *ngFor="let i of listGeneros.genres" [value]="i.name"  (click)="setGenero(i.id,i.name)">
+                <a  [ngStyle]="{'color':'yellow'}"> {{i.name}}</a>
+            </mat-option>
+        </div>
+        </mat-select>
+    </mat-form-field>
 </div>
