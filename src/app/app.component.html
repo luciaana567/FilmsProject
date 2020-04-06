@@ -1,6 +1,6 @@
 
 <div class='body' *ngIf="!altoContraste">
-    <button (click)='Contraste()'>ALTO-CONTRASTEe</button>
+   <div class="button"> <button (click)='Contraste()'> Contraste:  <img src='https://image.flaticon.com/icons/png/512/61/61410.png'></button></div>
     <app-nav [altoContraste]='altoContraste' ></app-nav>
 
     <app-search  ></app-search>
@@ -11,7 +11,9 @@
 
 <div class='body' *ngIf="altoContraste" [ngStyle]="{'background-color': 'black', 'color':'#fff'}">
     
-    <button (click)='Contraste()'>ALTO-CONTRASTE</button>
+    <div class="button" [ngStyle]="{'background-color': 'black'}"> 
+        <button [ngStyle]="{'background-color': 'black'}" (click)='Contraste()'> Contraste:  <img [ngStyle]="{'background-color':'yellow'}" src='https://image.flaticon.com/icons/png/512/61/61410.png'>
+    </button></div>
     <app-nav [altoContraste]='altoContraste'></app-nav>
 
     <app-search ></app-search>
