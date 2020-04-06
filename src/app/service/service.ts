@@ -52,11 +52,11 @@ export class Service {
       let data = this.getDate();
 
         if(this.generoId==='Todos'){
-          url =this.baseURL+this.getKey()+this.languageEn+'&sort_by=release_date.desc&include_adult=false&include_video=false'+this.numPage+page+'&primary_release_date.lte='+data; 
+          url =this.baseURL+this.getKey()+this.languageEn+'&sort_by=primary_release_date.desc&include_adult=false&include_video=false'+this.numPage+page+'&primary_release_date.lte='+data; 
         }else if(this.generoId==='Populares'){
           url =this.baseURL+this.getKey()+this.languageEn+'&sort_by=popularity.desc&include_adult=false&include_video=false'+this.numPage+page+'&primary_release_date.lte='+data; 
         }else {
-          url =this.baseURL+this.getKey()+this.languageEn+'&sort_by=release_date.desc&include_adult=false&include_video=false'+this.numPage+page+'&primary_release_date.lte='+data+genres+genero; 
+          url =this.baseURL+this.getKey()+this.languageEn+'&sort_by=primary_release_date.desc&include_adult=false&include_video=false'+this.numPage+page+'&primary_release_date.lte='+data+genres+genero; 
         } 
     console.log(data)
       return this.http.get(url);
