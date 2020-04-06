@@ -46,11 +46,11 @@
     <div class='card' [ngStyle]="{ 'background-color':'black'}" >
         <br>
         <div class='card-image' >
-            <div  class='imageTrue' *ngIf='filme.poster_path!=null' [ngStyle]="{'border-style': 'solid', 'border-color':'white'}">
-                    <img [ngStyle]="{'filter':' grayscale(100%) contrast(120%)'}" mat-card-image [src]="baseUrlFoto+filme.poster_path">
+            <div  class='imageTrue' *ngIf='filme.poster_path!=null' >
+                    <img [ngStyle]="{'filter':' grayscale(100%) contrast(120%)', 'border-style': 'solid', 'border-color':'white'}" mat-card-image [src]="baseUrlFoto+filme.poster_path">
             </div>
-            <div class="imageFalse" *ngIf='filme.poster_path===null' [ngStyle]="{'border-style': 'solid', 'border-color':'white'}">
-                    <img [ngStyle]="{'filter':' grayscale(100%) contrast(120%)'}" mat-card-image [src]="NoPicture">
+            <div class="imageFalse" *ngIf='filme.poster_path===null' >
+                    <img [ngStyle]="{'filter':' grayscale(100%) contrast(120%)', 'border-style': 'solid', 'border-color':'white'}" mat-card-image [src]="NoPicture">
             </div>
     </div>
         <div class="card-text" [ngStyle]="{'border-style': 'solid', 'border-color':'white'}">
