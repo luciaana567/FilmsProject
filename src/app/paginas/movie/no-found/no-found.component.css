@@ -14,6 +14,8 @@
 .body h1 a{
     cursor: pointer;
     transition: 1s;
+    color:  rgb(255,255,255);
+    text-decoration: none;
 }
 .body h1 a:hover{ color: rgb(221, 0, 63);}
 

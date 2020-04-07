@@ -1,11 +1,12 @@
   <!--Verificar se o nome pesquisado esta de acordo com a pesquisa-->
-  <div *ngIf="genero !=atualizarPagina() "></div>
-  <div *ngIf="genero ===atualizarPagina()" ></div>
+<div *ngIf="genero !=atualizarPagina() "></div>
+<div *ngIf="genero ===atualizarPagina()" ></div>
 
   <!--Verificar o status do contraste-->
-  <div *ngIf="!atualizarContraste() || atualizarContraste()" ></div>
+<div *ngIf="!atualizarContraste() || atualizarContraste()" ></div>
 
-<app-select-geners></app-select-geners>
+<!--Verificar se é a pagina 'home'-->
+<app-select-geners  *ngIf="genero!='Todos'"></app-select-geners>
 
 <!--Lista de Filmes-->
 <div class="body-list" *ngIf="pageNoFound()===false && contraste===false">
@@ -13,7 +14,8 @@
     <div class="list-Film">
      <br>   
      <br>
-    <h1><a routerLink="/home">Home</a> > {{generoNome}}</h1>
+    <h1  *ngIf="genero!='Todos'"><a routerLink="">Home</a> > {{generoNome}}</h1>
+    <h1  *ngIf="genero=='Todos'"> Últimos Filmes Lançados</h1>
 
         <ul *ngFor ="let i of pagina.results" >
             <mat-card (click)='visualizarFilmes(i.id)' >  
@@ -47,7 +49,7 @@
             
             <button  (click)="setPagina(1)">1</button> 
             <button (click)="setPagina(paginaProx)">{{paginaProx}}</button>
-            <button (click)="setPagina(pagina.total_pages)">{{pagina.total_pages}}</button>       
+            <a (click)="setPagina(pagina.total_pages)">FIM</a>  
         </div> 
         <div *ngIf ="paginaAtual===2">
                 <a  (click)="setPagina(1)">INÍCIO</a> 
@@ -85,7 +87,8 @@
     <div class="list-Film">
      <br>   
      <br>
-    <h1><a routerLink="/home"  [ngStyle]="{'color': 'yellow'}">Home</a> > {{generoNome}}</h1>
+    <h1 *ngIf="genero!='Todos'"><a routerLink=""  [ngStyle]="{'color': 'yellow'}">Home</a> > {{generoNome}}</h1>
+    <h1  *ngIf="genero=='Todos'"> Últimos Filmes Lançados</h1>
 
         <ul *ngFor ="let i of pagina.results" >
             <mat-card (click)='visualizarFilmes(i.id)' [ngStyle]="{'background-color': 'black', 'border-style': 'solid', 'border-color':'white'}">  
@@ -119,7 +122,7 @@
             
             <button [ngStyle]="{'background-color': 'black', 'color':'yellow'}"  (click)="setPagina(1)">1</button> 
             <button [ngStyle]="{'background-color': 'black', 'color':'yellow'}" (click)="setPagina(paginaProx)">{{paginaProx}}</button>
-            <button [ngStyle]="{'background-color': 'black', 'color':'yellow'}" (click)="setPagina(pagina.total_pages)">{{pagina.total_pages}}</button>       
+            <a [ngStyle]="{'color': 'yellow'}" (click)="setPagina(pagina.total_pages)">FIM</a>
         </div> 
         <div *ngIf ="paginaAtual===2">
                 <a [ngStyle]="{'color': 'yellow'}"  (click)="setPagina(1)">INÍCIO</a> 
@@ -153,5 +156,5 @@
 
 
 
-<!--Verficar se a pagina precisa ser direcionada-->
+<!--Verficar se a pagina precisa ser direcionada por não ter encontrado resultados-->
 <div class="body-list" *ngIf="pageNoFound()===true"></div>

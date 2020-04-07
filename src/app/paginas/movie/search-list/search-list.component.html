@@ -12,7 +12,7 @@
     <div class="list-Film">
      <br>   
      <br>
-    <h1><a routerLink="/home">Home</a> > {{nomeFilme}}</h1>
+    <h1><a routerLink="">Home</a> > Buscando por {{nomeFilme}}</h1>
 
         <ul *ngFor ="let i of pagina.results" >
             <mat-card (click)='visualizarFilmes(i.id)' >  
@@ -46,7 +46,7 @@
             
             <button  (click)="setPagina(1)">1</button> 
             <button (click)="setPagina(paginaProx)">{{paginaProx}}</button>
-            <button (click)="setPagina(pagina.total_pages)">{{pagina.total_pages}}</button>       
+            <a (click)="setPagina(pagina.total_pages)">FIM</a>   
         </div> 
         <div *ngIf ="paginaAtual===2">
                 <a  (click)="setPagina(1)">INÍCIO</a> 
@@ -83,7 +83,7 @@
     <div class="list-Film">
      <br>   
      <br>
-    <h1><a routerLink="/home"  [ngStyle]="{'color': 'yellow'}">Home</a> > {{nomeFilme}}</h1>
+    <h1><a routerLink=""  [ngStyle]="{'color': 'yellow'}">Home</a> > Buscando por {{nomeFilme}}</h1>
 
     <ul *ngFor ="let i of pagina.results" >
         <mat-card (click)='visualizarFilmes(i.id)' [ngStyle]="{'background-color': 'black', 'border-style': 'solid', 'border-color':'white'}">  
@@ -117,7 +117,7 @@
         
         <button [ngStyle]="{'background-color': 'black', 'color':'yellow'}"  (click)="setPagina(1)">1</button> 
         <button [ngStyle]="{'background-color': 'black', 'color':'yellow'}" (click)="setPagina(paginaProx)">{{paginaProx}}</button>
-        <button [ngStyle]="{'background-color': 'black', 'color':'yellow'}" (click)="setPagina(pagina.total_pages)">{{pagina.total_pages}}</button>       
+        <a [ngStyle]="{'color': 'yellow'}" (click)="setPagina(pagina.total_pages)">FIM</a>
     </div> 
     <div *ngIf ="paginaAtual===2">
             <a [ngStyle]="{'color': 'yellow'}"  (click)="setPagina(1)">INÍCIO</a> 

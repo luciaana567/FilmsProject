@@ -14,7 +14,6 @@ import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './body/search/search.component';
 import { SelectGenersComponent } from './body/select-geners/select-geners.component';
-import { HomeComponent } from './paginas/home/home.component';
 import { NavComponent } from './body/nav/nav.component';
 import { NoFoundComponent } from './paginas/movie/no-found/no-found.component';
 
@@ -26,7 +25,6 @@ import { NoFoundComponent } from './paginas/movie/no-found/no-found.component';
     ViewMovieComponent,
     SearchComponent,
     SelectGenersComponent,
-    HomeComponent,
     NavComponent,
     NoFoundComponent,
   ],

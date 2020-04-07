@@ -4,14 +4,16 @@ import { GenresListComponent } from './paginas/movie/genres-list/genres-list.com
 import { SearchListComponent } from './paginas/movie/search-list/search-list.component';
 import { ViewMovieComponent } from './paginas/movie/view-movie/view-movie.component';
 import { NoFoundComponent } from './paginas/movie/no-found/no-found.component';
-import { HomeComponent } from './paginas/home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent},
+  { path: '', redirectTo: 'filmes', pathMatch: 'full' },
   {
     path: 'filmes',
     children: [
+      {
+        path: '',
+        component: GenresListComponent
+      },
       {
         path: ':genero/:pagina',
         component: GenresListComponent

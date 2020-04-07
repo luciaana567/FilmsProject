@@ -29,15 +29,27 @@ export class GenresListComponent implements OnInit {
   constructor( private service: Service, private activatedRoute: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void { 
-    this.genero=this.activatedRoute.snapshot.params['genero'];
-    this.paginaAtual = this.activatedRoute.snapshot.params['pagina'];
-    this.generoNome= this.service.getGeneroNome();
-    this.paginaAtual = Number(this.paginaAtual);
+   
+    this.Iniciar()
     this.setPagina(this.paginaAtual);
     this.pageNoFound();
     this.contraste=this.service.getContraste();
    }
 
+
+   //Caso seja o primeiro acesso, ser redirecinado a primeira página
+   Iniciar(){
+     if( this.activatedRoute.snapshot.params['genero']!=null){
+        this.genero=this.activatedRoute.snapshot.params['genero'];
+        this.paginaAtual = this.activatedRoute.snapshot.params['pagina']; 
+     }else{
+       this.genero='Todos';
+       this.paginaAtual=1;
+       this.service.setGenero('Todos','Todos');
+     }
+     this.paginaAtual = Number(this.paginaAtual);
+     this.generoNome= this.service.getGeneroNome();
+   }
 
   //função para atualizar contraste
   atualizarContraste():boolean{
