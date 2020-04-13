@@ -2,6 +2,7 @@
     width: auto;
     height: auto;
     font-family: 'Dosis', sans-serif;
+    height: -300px;
 }
 .body h1 {
     text-align: left;

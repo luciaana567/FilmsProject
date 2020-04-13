@@ -67,15 +67,16 @@
 }
 
 /* Imagem de cada card */
-.imageTrue img{
+.imageTrue {
     width: 204px;
     height: 279px;
+    margin-right: 0px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
 /* Cada card de filme que não possui cartaz*/
-.imageFalse img { 
+.cartaz img { 
     width: 204px;
     height: 279px;
     border-top-left-radius: 10px;
