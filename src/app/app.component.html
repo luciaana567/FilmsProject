@@ -1,7 +1,12 @@
 
-<div class='body' *ngIf="!altoContraste">
-   <div class="button"> <button (click)='Contraste()'> Contraste:  <img src='https://image.flaticon.com/icons/png/512/61/61410.png'></button></div>
-    <app-nav [altoContraste]='altoContraste' ></app-nav>
+<div class='body' *ngIf="!altoContraste" [ngStyle]="{'font-size':font}">
+   <div class="button">
+    <button (click)='Contraste()'     > Contraste: <img src='https://image.flaticon.com/icons/png/512/61/61410.png'></button>
+    <button (click)='aumentarFonte()' > A +</button>
+    <button (click)='restaurarFonte()'> A  </button> 
+    <button (click)='diminuirFonte()' > A -</button>   
+</div>
+    <app-nav [altoContraste]='altoContraste' [font]='font' ></app-nav>
 
     <app-search  ></app-search>
     <router-outlet ></router-outlet>
@@ -9,12 +14,16 @@
 </div>
 
 
-<div class='body' *ngIf="altoContraste" [ngStyle]="{'background-color': 'black', 'color':'#fff'}">
+<div class='body' *ngIf="altoContraste" [ngStyle]="{'background-color': 'black', 'color':'#fff','font-size':font}">
     
     <div class="button" [ngStyle]="{'background-color': 'black'}"> 
-        <button [ngStyle]="{'background-color': 'black'}" (click)='Contraste()'> Contraste:  <img [ngStyle]="{'background-color':'yellow'}" src='https://image.flaticon.com/icons/png/512/61/61410.png'>
-    </button></div>
-    <app-nav [altoContraste]='altoContraste'></app-nav>
+       <button (click)='Contraste()'      [ngStyle]="{'background-color': 'black'}"                 >Contraste:  <img [ngStyle]="{'background-color':'yellow'}" src='https://image.flaticon.com/icons/png/512/61/61410.png'></button>
+       <button (click)='aumentarFonte()'  [ngStyle]="{'background-color': 'black','color':'yellow'}">A +</button>  
+       <button (click)='restaurarFonte()' [ngStyle]="{'background-color': 'black','color':'yellow'}">A  </button> 
+       <button (click)='diminuirFonte()'  [ngStyle]="{'background-color': 'black','color':'yellow'}">A -</button>
+    </div>
+    
+    <app-nav [altoContraste]='altoContraste' [font]='font'></app-nav>
 
     <app-search ></app-search>
 

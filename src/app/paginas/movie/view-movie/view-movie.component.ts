@@ -16,7 +16,13 @@ export class ViewMovieComponent implements OnInit {
   public filme: FilmesDetalhes;
   private error: any;
   public nome:string;
-  contraste:boolean;
+
+  
+  //variavei para acessibilidade
+  public contraste;
+  public font;
+  public font1;
+  public font2;
 
   //dados do filmes
   public descricao:string;
@@ -35,7 +41,13 @@ export class ViewMovieComponent implements OnInit {
   ngOnInit(): void {
     this.idFilme =  this.activatedRoute.snapshot.params['id'];
     this.getterFilm(this.idFilme);
+
+    //acessibilidade
     this.contraste=this.service.getContraste();
+    this.font= this.service.getFont();
+    this.font1= 'calc(15px + '+this.service.getFont()+')';
+    this.font2= 'calc(5px + '+this.service.getFont()+')';
+  
   }
 
   //função para atualizar contraste

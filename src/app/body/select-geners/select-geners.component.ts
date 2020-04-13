@@ -15,6 +15,7 @@ export class SelectGenersComponent implements OnInit {
   private error: any;
   public panelOpenState =false;
   contraste;
+  font;
 
   public generoId;
   public generoName;
@@ -24,6 +25,7 @@ export class SelectGenersComponent implements OnInit {
   ngOnInit(): void {
     this.getterListGeners();
     this.contraste=this.service.getContraste();
+    this.font=this.service.getFont();
   }
 
   //função para atualizar contraste

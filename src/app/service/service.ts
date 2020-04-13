@@ -19,6 +19,7 @@ export class Service {
   private generoId;
   private generoNome;
   private contraste:boolean;
+  private font;
 
   constructor(private http: HttpClient) {}
 
@@ -103,5 +104,11 @@ export class Service {
  public getContraste(){
    return this.contraste;
  }
+ public setFont(font:string){
+  this.font=font;
+ }
 
+ public getFont(){
+   return this.font;
+ }
 }

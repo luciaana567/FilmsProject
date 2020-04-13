@@ -1,6 +1,6 @@
 .body {
     width: auto;
-    height: 300px;
+    height: auto;
     font-family: 'Dosis', sans-serif;
 }
 .body h1 {
@@ -19,10 +19,10 @@
 }
 .body h1 a:hover{ color: rgb(221, 0, 63);}
 
-.msg h1{
+.msg h2{
     color: rgb(255,255,255);
-    margin-bottom: 130px;
-    margin-top: -100px;
+    margin-bottom: 15%;
+    margin-top: 10%;
     margin-left: 30%;
 }
 
@@ -37,7 +37,7 @@
         font-size: 98%;
     }
 
-    .msg h1{
+    .msg h2{
         margin-bottom: 50%;
         margin-top: -20%;
         margin-left: 25%;
@@ -55,7 +55,7 @@
         margin-right: 20%;  
     }
 
-    .msg h1{
+    .msg h2{
         margin-bottom: 50%;
         margin-top: -50%;
         margin-left: 40%;

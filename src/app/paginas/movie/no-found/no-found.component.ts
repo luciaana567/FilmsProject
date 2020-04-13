@@ -10,13 +10,20 @@ import { Service } from 'src/app/service/service';
 export class NoFoundComponent implements OnInit {
 
   public item :string;
-  contraste;
+
+  //variavei para acessibilidade
+  public contraste;
+  public font1;
 
   constructor(private activatedRoute: ActivatedRoute, private service:Service) { }
 
   ngOnInit(): void {
     this.item = this.activatedRoute.snapshot.params['noFound'];
+    
+    //iniciar acessibilidade
     this.contraste=this.service.getContraste();
+    this.font1= 'calc(15px + '+this.service.getFont()+')';
+    
   }
 
 

@@ -5,17 +5,17 @@
 
     <div class="nav-right">
         <ul class="menu"> <!-- Esse é o 1 nivel ou o nivel principal -->
-        <li><a class='principal' routerLink="">Home</a></li>
-        <li><a class='principal'>Gêneros</a>
+        <li><a class='principal' routerLink="" [ngStyle]="{'font-size':font}">Home</a></li>
+        <li><a class='principal' [ngStyle]="{'font-size':font}">Gêneros</a>
             <ul class="submenu" > <!-- Esse é o 2 nivel ou o primeiro Drop Down -->
-                <li (click)="setGenero('Populares','Populares')"><a>Populares</a></li>
-                <li (click)="setGenero(18,'Ação')"><a >Ação</a></li>
-                <li (click)="setGenero(12,'Aventura')"><a>Aventura</a></li>                
-                <li (click)="setGenero(16,'Animação')"><a>Animação</a></li>
-                <li (click)="setGenero(35,'Comédia')"><a>Comédia</a></li>
-                <li (click)="setGenero(18,'Drama')"><a>Drama</a></li>
-                <li (click)="setGenero(10749,'Romance')"><a>Romance</a></li>              
-                <li (click)="setGenero(27,'Terror')"><a>Terror</a></li>
+                <li (click)="setGenero('Populares','Populares')"><a [ngStyle]="{'font-size':font}">Populares</a></li>
+                <li (click)="setGenero(18,'Ação')"><a [ngStyle]="{'font-size':font}" >Ação</a></li>
+                <li (click)="setGenero(12,'Aventura')"><a [ngStyle]="{'font-size':font}">Aventura</a></li>                
+                <li (click)="setGenero(16,'Animação')"><a [ngStyle]="{'font-size':font}">Animação</a></li>
+                <li (click)="setGenero(35,'Comédia')"><a [ngStyle]="{'font-size':font}">Comédia</a></li>
+                <li (click)="setGenero(18,'Drama')"><a [ngStyle]="{'font-size':font}">Drama</a></li>
+                <li (click)="setGenero(10749,'Romance')"><a [ngStyle]="{'font-size':font}">Romance</a></li>              
+                <li (click)="setGenero(27,'Terror')"><a [ngStyle]="{'font-size':font}">Terror</a></li>
             </ul>          
         </li>
         </ul>
@@ -28,17 +28,17 @@
 
     <div class="nav-right" >
         <ul class="menu"> <!-- Esse é o 1 nivel ou o nivel principal -->
-        <li><a class='principal' routerLink="/filmes/Todos/1" [ngStyle]="{'color': 'yellow'}">Home</a></li>
-        <li><a class='principal ' [ngStyle]="{'color': 'yellow'}">Gêneros</a>
+        <li><a class='principal' routerLink="/filmes/Todos/1" [ngStyle]="{'color': 'yellow','font-size':font}">Home</a></li>
+        <li><a class='principal ' [ngStyle]="{'color': 'yellow','font-size':font}">Gêneros</a>
             <ul class="submenu" > <!-- Esse é o 2 nivel ou o primeiro Drop Down -->
-                <li (click)="setGenero('Populares','Populares')"><a [ngStyle]="{'color': 'yellow'}">Populares</a></li>
-                <li (click)="setGenero(18,'Ação')"><a [ngStyle]="{'color': 'yellow'}" >Ação</a></li>
-                <li (click)="setGenero(12,'Aventura')"><a [ngStyle]="{'color': 'yellow'}">Aventura</a></li>                
-                <li (click)="setGenero(16,'Animação')"><a [ngStyle]="{'color': 'yellow'}">Animação</a></li>
-                <li (click)="setGenero(35,'Comédia')"><a [ngStyle]="{'color': 'yellow'}">Comédia</a></li>
-                <li (click)="setGenero(18,'Drama')"><a [ngStyle]="{'color': 'yellow'}">Drama</a></li>
-                <li (click)="setGenero(10749,'Romance')"><a [ngStyle]="{'color': 'yellow'}">Romance</a></li>             
-                <li (click)="setGenero(27,'Terror')"><a [ngStyle]="{'color': 'yellow'}">Terror</a></li>
+                <li (click)="setGenero('Populares','Populares')"><a [ngStyle]="{'color': 'yellow','font-size':font}">Populares</a></li>
+                <li (click)="setGenero(18,'Ação')"><a [ngStyle]="{'color': 'yellow','font-size':font}" >Ação</a></li>
+                <li (click)="setGenero(12,'Aventura')"><a [ngStyle]="{'color': 'yellow','font-size':font}">Aventura</a></li>                
+                <li (click)="setGenero(16,'Animação')"><a [ngStyle]="{'color': 'yellow','font-size':font}">Animação</a></li>
+                <li (click)="setGenero(35,'Comédia')"><a [ngStyle]="{'color': 'yellow','font-size':font}">Comédia</a></li>
+                <li (click)="setGenero(18,'Drama')"><a [ngStyle]="{'color': 'yellow','font-size':font}">Drama</a></li>
+                <li (click)="setGenero(10749,'Romance')"><a [ngStyle]="{'color': 'yellow','font-size':font}">Romance</a></li>             
+                <li (click)="setGenero(27,'Terror')"><a [ngStyle]="{'color': 'yellow','font-size':font}">Terror</a></li>
             </ul>          
         </li>
         </ul>

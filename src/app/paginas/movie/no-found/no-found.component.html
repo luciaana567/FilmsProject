@@ -2,15 +2,15 @@
 <div *ngIf="!atualizarContraste() || atualizarContraste()" ></div>
 
 <div class='body' *ngIf="contraste==false">
-    <h1 ><a a routerLink="">Home</a> > Buscando por {{item}}</h1>
+    <h1 [ngStyle]="{'font-size': font1}"><a a routerLink="">Home</a> > Buscando por {{item}}</h1>
 </div>
 
 <div class='body' *ngIf="contraste==true">
-    <h1 ><a a routerLink="" [ngStyle]="{'color': 'yellow'}" routerLink="/home">Home</a> > Buscando por {{item}}</h1>
+    <h1 [ngStyle]="{'font-size': font1}"><a a routerLink="" [ngStyle]="{'color': 'yellow'}" routerLink="/home">Home</a> > Buscando por {{item}}</h1>
 </div>
 
 <div class='msg'>
-    <h1 >Não foram encontrados resultados!</h1>
+    <h2 [ngStyle]="{'font-size': font1}">Não foram encontrados resultados!</h2>
 </div>
 
 

@@ -18,8 +18,13 @@ export class GenresListComponent implements OnInit {
   public paginaAtual;
   public paginaProx;
   public totalPagina = this.pagina.total_pages;
+
+  //variavei para acessibilidade
   public contraste;
-  
+  public font;
+  public font1;
+  public font2;
+
   //váriaveis para pegar informações do gênero
   public genero;
   public generoNome='Todos';
@@ -33,7 +38,13 @@ export class GenresListComponent implements OnInit {
     this.Iniciar()
     this.setPagina(this.paginaAtual);
     this.pageNoFound();
+    
+    //iniciar acessibilidade
     this.contraste=this.service.getContraste();
+    this.font= this.service.getFont();
+    this.font1= 'calc(15px + '+this.service.getFont()+')';
+    this.font2= 'calc(5px + '+this.service.getFont()+')';
+  
    }
 
 

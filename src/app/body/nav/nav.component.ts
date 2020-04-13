@@ -17,6 +17,7 @@ export class NavComponent implements OnInit {
   public generoName;
 
   @Input() altoContraste ;
+  @Input() font;
  
 
   constructor( private service: Service,private router: Router) { }
@@ -25,9 +26,12 @@ export class NavComponent implements OnInit {
     this.generoId='Todos';
     this.generoName='Todos';
     this.service.setContraste(this.altoContraste);  
-    
+    this.service.setFont(this.font);
   }
   
+
+
+  //função para verificar contrate 
   atualizar():boolean{
     if(this.service.getContraste()!=this.altoContraste){
       this.service.setContraste(this.altoContraste); 

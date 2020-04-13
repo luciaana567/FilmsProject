@@ -13,7 +13,6 @@ export class SearchListComponent implements OnInit {
   public pagina = new Pagina();
   private error: any;
   public nomeFilme:string;
-  public contraste;
   
 
   //paginacao
@@ -21,6 +20,14 @@ export class SearchListComponent implements OnInit {
   public paginaAtual;
   public paginaProx;
   public totalPagina;
+
+  
+  //variavei para acessibilidade
+  public contraste;
+  public font;
+  public font1;
+  public font2;
+
 
   public baseUrlFoto ='https://image.tmdb.org/t/p/w300';
   public NoPicture ='https://www.southernpipe.com/ASSETS/WEB_THEMES/SOUTHERNPIPES/images/NoImage.png';
@@ -39,6 +46,10 @@ export class SearchListComponent implements OnInit {
     
     
     this.contraste=this.service.getContraste();
+    this.font= this.service.getFont();
+    this.font1= 'calc(15px + '+this.service.getFont()+')';
+    this.font2= 'calc(5px + '+this.service.getFont()+')';
+  
    }
 
   //função para atualizar contraste
