@@ -21,7 +21,7 @@
     transition: 0.5s;
 }
 
-.button :hover{
+.button button:hover{
     background-color: rgb(17, 110, 204);
 }
 
