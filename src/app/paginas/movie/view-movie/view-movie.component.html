@@ -7,21 +7,18 @@
     <h1 class='caminho' [ngStyle]="{'font-size':font1}" ><a  routerLink="">Home</a> >Visualização</h1>
     <div class='card'>
         <br>
+        
         <div class='card-image'>
-            <div  class='imageTrue' *ngIf='filme.poster_path!=null'>
-                    <img mat-card-image [src]="baseUrlFoto+filme.poster_path">
-            </div>
-            <div class="imageFalse" *ngIf='filme.poster_path===null'>
-                    <img mat-card-image [src]="NoPicture">
-            </div>
-    </div>
+            <img class='imageTrue' *ngIf='filme.poster_path!=null' [src]="baseUrlFoto+filme.poster_path" alt='cartaz do filme apresentado'>
+            <img class="imageFalse" *ngIf='filme.poster_path===null' mat-card-image [src]="NoPicture" alt='este filme não possui cartaz, então esta é uma imagem de camera com sinal de bloqueio, representando o cartaz.'>
+        </div>
         <div class="card-text">
-            <h1 [ngStyle]="{'font-size':font1}">{{nome}}</h1>
+            <h1 [ngStyle]="{'font-size':font1}"  lang="en">{{nome}}</h1>
                 <h5 [ngStyle]="{'font-size':font2}">Descrição:</h5> 
-                <h6 [ngStyle]="{'font-size':font}">{{descricao || "não há informações"}} </h6>
-                <h5 [ngStyle]="{'font-size':font2}">Data de Lançamento:  </h5><p [ngStyle]="{'font-size':font2}">{{dataDeLancamento || "não há informação"}}</p> 
-                <h5 [ngStyle]="{'font-size':font2}">Tempo de execução:   </h5><p [ngStyle]="{'font-size':font2}">{{duracao || 0}} minutos</p>
-                <h5 [ngStyle]="{'font-size':font2}">Avaliação média:     </h5><p [ngStyle]="{'font-size':font2}"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="25px" width="34px"
+                <p class='descricao' [ngStyle]="{'font-size':font}">{{descricao || "não há informações"}} </p>
+                <h5 [ngStyle]="{'font-size':font2}">Data de Lançamento:  </h5><p [ngStyle]="{'font-size':font2}" class='normal'>{{dataDeLancamento || "não há informação"}}</p> 
+                <h5 [ngStyle]="{'font-size':font2}">Tempo de execução:   </h5><p [ngStyle]="{'font-size':font2}" class='normal'>{{duracao || 0}} minutos</p>
+                <h5 [ngStyle]="{'font-size':font2}">Avaliação média:     </h5><p [ngStyle]="{'font-size':font2}" class='normal'><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="25px" width="34px"
                     viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
                     <path style="fill:#FFDC64;" d="M499.92,188.26l-165.839-15.381L268.205,19.91c-4.612-10.711-19.799-10.711-24.411,0l-65.875,152.97
                     L12.08,188.26c-11.612,1.077-16.305,15.52-7.544,23.216l125.126,109.922L93.044,483.874c-2.564,11.376,9.722,20.302,19.749,14.348
@@ -45,18 +42,18 @@
     <h1 class='caminho' [ngStyle]="{'font-size':font1}"><a [ngStyle]="{'color': 'yellow'}" routerLink="">Home</a> >Visualização</h1>
     <div class='card' [ngStyle]="{ 'background-color':'black'}" >
         <br>
-        <div class='card-image' >
+        <div class='card-image' alt='imagem do cartaz' >
             <div  class='imageTrue' *ngIf='filme.poster_path!=null' >
-                    <img [ngStyle]="{'filter':' grayscale(100%) contrast(120%)', 'border-style': 'solid', 'border-color':'white'}" mat-card-image [src]="baseUrlFoto+filme.poster_path">
+                    <img  [ngStyle]="{'filter':' grayscale(100%) contrast(120%)', 'border-style': 'solid', 'border-color':'white'}" mat-card-image [src]="baseUrlFoto+filme.poster_path" alt='cartaz'>
             </div>
             <div class="imageFalse" *ngIf='filme.poster_path===null' >
                     <img [ngStyle]="{'filter':' grayscale(100%) contrast(120%)', 'border-style': 'solid', 'border-color':'white'}" mat-card-image [src]="NoPicture">
             </div>
     </div>
         <div class="card-text" [ngStyle]="{'border-style': 'solid', 'border-color':'white'}">
-            <h1>{{nome}}</h1>
+            <h1 [ngStyle]="{'color':'white','font-size':font1}"lang="en" >{{nome}}</h1>
                 <h3 [ngStyle]="{'color':'white','font-size':font2}">Descrição:</h3> 
-                <h6 [ngStyle]="{'color':'white','font-size':font}">{{descricao || "não há informações"}} </h6>
+                <p class='descricao' [ngStyle]="{'color':'white','font-size':font}">{{descricao || "não há informações"}} </p>
                 <h5 [ngStyle]="{'color':'white','font-size':font2}">Data de Lançamento:  </h5><p [ngStyle]="{'color':'white','font-size':font2}">{{dataDeLancamento || "não há informação"}}</p> 
                 <h5 [ngStyle]="{'color':'white','font-size':font2}">Tempo de execução:   </h5><p [ngStyle]="{'color':'white','font-size':font2}">{{duracao || 0}} minutos</p>
                 <h5 [ngStyle]="{'color':'white','font-size':font2}">Avaliação média:     </h5><p [ngStyle]="{'color':'white','font-size':font2}"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="25px" width="34px"
