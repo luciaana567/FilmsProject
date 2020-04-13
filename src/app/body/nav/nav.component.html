@@ -5,8 +5,8 @@
 
     <div class="nav-right">
         <ul class="menu"> <!-- Esse é o 1 nivel ou o nivel principal -->
-        <li><a class='principal' routerLink="" [ngStyle]="{'font-size':font}">Home</a></li>
-        <li><a class='principal' [ngStyle]="{'font-size':font}">Gêneros</a>
+        <li><a class='principal' routerLink="" [ngStyle]="{'font-size':font}" >Home</a></li>
+        <li><a class='principal' href='#' [ngStyle]="{'font-size':font}"      >Gêneros</a>
             <ul class="submenu" > <!-- Esse é o 2 nivel ou o primeiro Drop Down -->
                 <li (click)="setGenero('Populares','Populares')"><a [ngStyle]="{'font-size':font}">Populares</a></li>
                 <li (click)="setGenero(18,'Ação')"><a [ngStyle]="{'font-size':font}" >Ação</a></li>
